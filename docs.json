@@ -1,68 +1,49 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Scalt",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
+    "primary": "#465fff",
+    "light": "#7584d6",
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Commencer",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "quickstart"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Guides essentiels",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "guides/projects",
+              "guides/create-agent",
+              "guides/edit-agent",
+              "guides/run-tasks"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "À venir",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "guides/coming-soon"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "API Reference (Bientôt disponible)",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "À venir",
             "pages": [
               "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
             ]
           }
         ]
@@ -71,13 +52,18 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Site web",
+          "href": "https://scalt.ai",
+          "icon": "globe"
+        },
+        {
+          "anchor": "Application",
+          "href": "https://beta.scalt.ai",
+          "icon": "browser"
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://scalt.ai/blog",
           "icon": "newspaper"
         }
       ]
@@ -91,32 +77,32 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://scalt.ai/contact"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Rejoindre la beta",
+      "href": "https://beta.scalt.ai/waitlist"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/scalt_ai",
+      "linkedin": "https://linkedin.com/company/scaltai",
+      "instagram": "https://instagram.com/scaltai"
     }
   }
 }

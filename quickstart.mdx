@@ -1,80 +1,219 @@
 ---
-title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+title: "Démarrage rapide"
+description: "Créez votre premier agent Scalt en 5 minutes"
 ---
 
-## Get started in three steps
+## Introduction
 
-Get your documentation site running locally and make your first customization.
-
-### Step 1: Set up your local environment
-
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 2: Deploy your changes
-
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
-
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 3: Go live
-
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
-
-## Next steps
-
-Now that you have your docs running, explore these key features:
-
-<CardGroup cols={2}>
-
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
-
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
-
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
-
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
-</CardGroup>
+Bienvenue dans Scalt ! Ce guide vous accompagne dans la création de votre premier agent intelligent en quelques minutes seulement.
 
 <Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+  **Prérequis** : Vous devez avoir un compte Scalt. Si ce n'est pas encore le cas, [rejoignez la beta privée](https://scalt.ai).
+</Note>
+
+## Étape 1 : Créez votre projet
+
+Les projets vous permettent d'organiser vos agents et automatisations par domaine métier.
+
+<Steps>
+  <Step title="Accédez au tableau de bord">
+    Connectez-vous à votre [tableau de bord Scalt](https://app.scalt.ai)
+  </Step>
+  <Step title="Créez un nouveau projet">
+    Cliquez sur **"Nouveau projet"** et donnez-lui un nom descriptif (par exemple : "Marketing Automation" ou "Support Client")
+  </Step>
+  <Step title="Configurez les paramètres">
+    Définissez les paramètres de base : nom, description, et invitez les membres de votre équipe si nécessaire
+  </Step>
+</Steps>
+
+<Tip>
+  Organisez vos projets par département ou cas d'usage pour faciliter la gestion de vos agents.
+</Tip>
+
+## Étape 2 : Créez votre premier agent avec l'Assistant Scalt
+
+L'Assistant Scalt vous permet de créer des agents simplement en décrivant ce que vous voulez automatiser.
+
+<Steps>
+  <Step title="Ouvrez l'Assistant Scalt">
+    Dans votre projet, cliquez sur **"Créer un agent"** puis sélectionnez **"Assistant Scalt"**
+  </Step>
+  <Step title="Décrivez votre besoin">
+    Exprimez simplement ce que vous voulez automatiser, par exemple :
+    
+    ```
+    "Créer un agent qui surveille mes emails, identifie les demandes clients 
+    urgentes et crée automatiquement des tickets dans notre système de support"
+    ```
+  </Step>
+  <Step title="L'Assistant génère votre agent">
+    L'Assistant Scalt analyse votre demande et génère automatiquement :
+    - La configuration de l'agent
+    - Les outils nécessaires
+    - Le workflow d'exécution
+  </Step>
+</Steps>
+
+<CodeGroup>
+
+```text Exemple de prompt simple
+Créer un agent qui analyse mes ventes quotidiennes et m'envoie un résumé chaque matin
+```
+
+```text Exemple de prompt avancé
+Créer un agent qui :
+1. Récupère les nouveaux leads depuis HubSpot
+2. Enrichit les données avec LinkedIn
+3. Score les leads selon nos critères
+4. Envoie les meilleurs leads à l'équipe commerciale via Slack
+```
+
+</CodeGroup>
+
+## Étape 3 : Configurez votre agent
+
+Une fois votre agent créé, personnalisez-le selon vos besoins.
+
+<AccordionGroup>
+  <Accordion icon="plug" title="Connectez vos outils">
+    Ajoutez les intégrations nécessaires :
+    - **Outils MCP** : Connectez vos applications préférées
+    - **APIs** : Intégrez vos APIs personnalisées
+    - **Documents** : Uploadez des fichiers de connaissance pour votre agent
+  </Accordion>
+  
+  <Accordion icon="sliders" title="Ajustez les paramètres">
+    Personnalisez le comportement de votre agent :
+    - **Modèle IA** : Choisissez entre GPT-4, Claude, Mistral...
+    - **Température** : Ajustez la créativité des réponses
+    - **Timeout** : Définissez la durée maximale d'exécution
+  </Accordion>
+  
+  <Accordion icon="book" title="Enrichissez la base de connaissances">
+    Donnez du contexte à votre agent :
+    - Uploadez des documents PDF, Word, Excel
+    - Ajoutez des liens vers votre documentation
+    - Définissez des instructions spécifiques
+  </Accordion>
+</AccordionGroup>
+
+## Étape 4 : Testez dans le Playground
+
+Avant de déployer, testez votre agent dans un environnement sécurisé.
+
+<Steps>
+  <Step title="Ouvrez le Playground">
+    Cliquez sur **"Tester"** pour accéder au Playground
+  </Step>
+  <Step title="Simulez des scénarios">
+    Testez différents cas d'usage pour vérifier le comportement de votre agent
+  </Step>
+  <Step title="Analysez les résultats">
+    Examinez les logs, les appels d'outils et les réponses générées
+  </Step>
+  <Step title="Itérez si nécessaire">
+    Ajustez la configuration jusqu'à obtenir le comportement souhaité
+  </Step>
+</Steps>
+
+<Warning>
+  **Important** : Testez toujours votre agent dans le Playground avant de le déployer en production pour éviter les erreurs coûteuses.
+</Warning>
+
+## Étape 5 : Lancez votre agent
+
+Une fois satisfait des tests, déployez votre agent.
+
+<Tabs>
+  <Tab title="Exécution immédiate">
+    Pour lancer une tâche immédiatement :
+    
+    1. Cliquez sur **"Exécuter maintenant"**
+    2. Fournissez les paramètres d'entrée si nécessaire
+    3. Suivez l'exécution en temps réel
+    4. Consultez les résultats une fois terminé
+  </Tab>
+  
+  <Tab title="Planification">
+    Pour planifier une exécution récurrente :
+    
+    1. Cliquez sur **"Planifier"**
+    2. Choisissez la fréquence (quotidien, hebdomadaire, mensuel, ou cron personnalisé)
+    3. Définissez l'heure d'exécution
+    4. Activez la planification
+    
+    <Tip>
+      Utilisez la syntaxe cron pour des planifications complexes (ex: `0 9 * * 1-5` pour tous les jours ouvrés à 9h)
+    </Tip>
+  </Tab>
+</Tabs>
+
+## Suivez l'exécution de votre agent
+
+Une fois votre agent lancé, surveillez ses performances.
+
+<CardGroup cols={3}>
+  <Card title="Logs en temps réel" icon="scroll">
+    Visualisez les actions de votre agent en direct
+  </Card>
+  <Card title="Historique d'exécution" icon="clock-rotate-left">
+    Accédez à toutes les exécutions passées
+  </Card>
+  <Card title="Métriques" icon="chart-simple">
+    Analysez les performances et le coût
+  </Card>
+</CardGroup>
+
+## Prochaines étapes
+
+Félicitations ! Vous avez créé et déployé votre premier agent Scalt. 🎉
+
+<CardGroup cols={2}>
+  <Card
+    title="Éditez votre agent"
+    icon="pen-to-square"
+    href="/guides/edit-agent"
+  >
+    Apprenez à modifier et améliorer vos agents existants
+  </Card>
+  <Card
+    title="Gestion de projets"
+    icon="folder-tree"
+    href="/guides/projects"
+  >
+    Organisez efficacement vos agents et équipes
+  </Card>
+  <Card
+    title="Orchestration d'agents"
+    icon="network-wired"
+    href="/guides/coming-soon"
+  >
+    Créez des équipes d'agents qui collaborent (bientôt disponible)
+  </Card>
+  <Card
+    title="Scalt Factory"
+    icon="store"
+    href="/guides/coming-soon"
+  >
+    Explorez le marketplace d'agents spécialisés (bientôt disponible)
+  </Card>
+</CardGroup>
+
+## Besoin d'aide ?
+
+<Card
+  title="Support Scalt"
+  icon="life-ring"
+  href="https://scalt.ai/contact"
+  horizontal
+>
+  Notre équipe est là pour vous accompagner. Contactez-nous via le chat ou par email.
+</Card>
+
+<Note>
+  **Ressources supplémentaires** :
+  - [Exemples de cas d'usage](https://scalt.ai/blog)
+  - [Documentation API](/api-reference/introduction)
+  - [Communauté Scalt](https://community.scalt.ai)
 </Note>

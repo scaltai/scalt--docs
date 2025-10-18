@@ -1,0 +1,736 @@
+---
+title: "Lancer et planifier des tâches"
+description: "Exécutez vos agents immédiatement ou programmez des automatisations récurrentes"
+icon: "play"
+---
+
+## Introduction
+
+Une fois votre agent configuré et testé, vous pouvez l'exécuter de deux manières :
+
+<CardGroup cols={2}>
+  <Card title="Exécution immédiate" icon="bolt">
+    Lancez une tâche maintenant et obtenez les résultats instantanément
+  </Card>
+  <Card title="Planification" icon="calendar-clock">
+    Programmez des exécutions automatiques selon un calendrier
+  </Card>
+</CardGroup>
+
+## Exécution immédiate
+
+### Lancer une tâche manuellement
+
+<Steps>
+  <Step title="Sélectionnez votre agent">
+    Dans votre projet, cliquez sur l'agent à exécuter
+  </Step>
+  <Step title="Cliquez sur Exécuter">
+    Bouton **"Exécuter maintenant"** en haut à droite
+  </Step>
+  <Step title="Fournissez les paramètres">
+    Si l'agent nécessite des données d'entrée, remplissez le formulaire
+  </Step>
+  <Step title="Lancez l'exécution">
+    Confirmez pour démarrer la tâche
+  </Step>
+</Steps>
+
+### Suivre l'exécution en temps réel
+
+Une fois lancée, vous pouvez surveiller votre tâche en direct :
+
+<Tabs>
+  <Tab title="Vue en temps réel">
+    <CardGroup cols={3}>
+      <Card title="Statut" icon="signal">
+        En cours, Réussi, Échoué, En attente
+      </Card>
+      <Card title="Progression" icon="spinner">
+        Étape actuelle et % d'avancement
+      </Card>
+      <Card title="Logs live" icon="terminal">
+        Chaque action effectuée en direct
+      </Card>
+    </CardGroup>
+  </Tab>
+  
+  <Tab title="Détails techniques">
+    - **Étapes exécutées** : Liste chronologique des actions
+    - **Appels d'API** : Requêtes aux services externes
+    - **Tokens consommés** : Utilisation du modèle IA
+    - **Durée** : Temps d'exécution de chaque étape
+    - **Erreurs** : Messages d'erreur détaillés si échec
+  </Tab>
+  
+  <Tab title="Résultats">
+    - **Outputs** : Données produites par l'agent
+    - **Fichiers générés** : Documents, rapports, exports
+    - **Actions effectuées** : Emails envoyés, tickets créés, etc.
+    - **Métriques** : KPIs calculés par l'agent
+  </Tab>
+</Tabs>
+
+### Interface de monitoring
+
+```
+┌─────────────────────────────────────────────────┐
+│  🤖 Agent : Analyse quotidienne des ventes      │
+│  📊 Statut : En cours...                        │
+│  ⏱️  Durée : 00:02:34                            │
+│  💰 Coût : 0.23 crédits                         │
+└─────────────────────────────────────────────────┘
+
+✅ [00:00:05] Connexion à Shopify réussie
+✅ [00:00:12] Récupération de 247 commandes
+🔄 [00:01:45] Analyse des données en cours...
+   └─ Modèle : GPT-4
+   └─ Tokens : 1,234 / 4,000
+   └─ Progression : 67%
+
+⏳ En attente : Génération du rapport PDF
+```
+
+## Planification de tâches
+
+### Créer une planification
+
+<Steps>
+  <Step title="Accédez à la planification">
+    Dans la page de votre agent, cliquez sur **"Planifier"**
+  </Step>
+  <Step title="Choisissez la fréquence">
+    Sélectionnez parmi les options prédéfinies ou créez une règle personnalisée
+  </Step>
+  <Step title="Définissez les paramètres">
+    Heure, fuseau horaire, et éventuels paramètres d'entrée
+  </Step>
+  <Step title="Activez la planification">
+    Sauvegardez et activez pour démarrer l'automatisation
+  </Step>
+</Steps>
+
+### Fréquences prédéfinies
+
+<Tabs>
+  <Tab title="Horaire">
+    ```
+    ⏰ Toutes les heures
+    ⏰ Toutes les 2 heures
+    ⏰ Toutes les 6 heures
+    ⏰ Toutes les 12 heures
+    ```
+    
+    **Cas d'usage** : Monitoring, alertes temps réel, veille concurrentielle
+  </Tab>
+  
+  <Tab title="Quotidien">
+    ```
+    📅 Tous les jours à 9h00
+    📅 Tous les jours ouvrés (Lun-Ven)
+    📅 Tous les jours à 8h et 18h
+    📅 Toutes les nuits à 2h00
+    ```
+    
+    **Cas d'usage** : Rapports quotidiens, synchronisation de données, sauvegardes
+  </Tab>
+  
+  <Tab title="Hebdomadaire">
+    ```
+    📆 Tous les lundis à 9h00
+    📆 Tous les vendredis à 17h00
+    📆 Mardi et jeudi à 14h00
+    📆 Chaque fin de semaine
+    ```
+    
+    **Cas d'usage** : Rapports hebdomadaires, nettoyage de données, récapitulatifs
+  </Tab>
+  
+  <Tab title="Mensuel">
+    ```
+    📊 Le 1er de chaque mois à 8h00
+    📊 Le dernier jour du mois à 23h59
+    📊 Le 15 de chaque mois
+    📊 Début de trimestre
+    ```
+    
+    **Cas d'usage** : Facturation, rapports mensuels, analyses financières
+  </Tab>
+</Tabs>
+
+### Planification personnalisée (Cron)
+
+Pour des besoins spécifiques, utilisez la syntaxe cron :
+
+<CodeGroup>
+
+```cron Exemples de syntaxe cron
+# Format : minute heure jour mois jour_semaine
+
+# Tous les jours ouvrés à 9h00
+0 9 * * 1-5
+
+# Tous les lundis et mercredis à 14h30
+30 14 * * 1,3
+
+# Le 1er et le 15 de chaque mois à 8h00
+0 8 1,15 * *
+
+# Toutes les 15 minutes
+*/15 * * * *
+
+# Tous les jours à 9h, 12h et 18h
+0 9,12,18 * * *
+
+# Le dernier jour de chaque mois à minuit
+0 0 28-31 * *
+```
+
+```yaml Configuration complète
+schedule:
+  name: "Rapport hebdomadaire"
+  cron: "0 9 * * 1"  # Tous les lundis à 9h
+  timezone: "Europe/Paris"
+  enabled: true
+  
+  # Paramètres optionnels
+  params:
+    date_range: "last_7_days"
+    format: "pdf"
+  
+  # Notifications
+  notifications:
+    on_start:
+      - type: "slack"
+        channel: "#notifications"
+        message: "🚀 Génération du rapport hebdomadaire..."
+    
+    on_success:
+      - type: "email"
+        to: ["equipe@entreprise.com"]
+        subject: "Rapport hebdomadaire disponible"
+        attach_output: true
+    
+    on_failure:
+      - type: "slack"
+        channel: "#alerts"
+        message: "❌ Échec de la génération du rapport"
+        mention: ["@admin"]
+```
+
+</CodeGroup>
+
+<Tip>
+  **Outil de test** : Utilisez [crontab.guru](https://crontab.guru/) pour vérifier votre syntaxe cron et visualiser les prochaines exécutions.
+</Tip>
+
+### Gestion du fuseau horaire
+
+<Warning>
+  **Important** : Spécifiez toujours le fuseau horaire pour éviter les confusions, surtout si votre équipe est distribuée géographiquement.
+</Warning>
+
+```yaml Exemples de fuseaux horaires
+timezone: "Europe/Paris"      # France
+timezone: "Europe/London"     # UK
+timezone: "America/New_York"  # EST
+timezone: "America/Los_Angeles"  # PST
+timezone: "Asia/Tokyo"        # Japon
+timezone: "UTC"               # Temps universel
+```
+
+## Gestion des planifications actives
+
+### Vue d'ensemble
+
+Accédez à toutes vos planifications depuis le tableau de bord :
+
+<CardGroup cols={3}>
+  <Card title="Actives" icon="play">
+    Planifications en cours d'exécution
+  </Card>
+  <Card title="Pausées" icon="pause">
+    Temporairement désactivées
+  </Card>
+  <Card title="Historique" icon="clock">
+    Exécutions passées
+  </Card>
+</CardGroup>
+
+### Actions disponibles
+
+<Tabs>
+  <Tab title="Pause / Reprise">
+    Mettez en pause une planification sans la supprimer :
+    - Utile pour les maintenances
+    - Conserve tous les paramètres
+    - Réactivation en un clic
+  </Tab>
+  
+  <Tab title="Modification">
+    Changez la fréquence ou les paramètres :
+    - Nouvelle heure d'exécution
+    - Paramètres d'entrée différents
+    - Notifications modifiées
+  </Tab>
+  
+  <Tab title="Duplication">
+    Créez une variante de la planification :
+    - Même agent, horaire différent
+    - Paramètres légèrement différents
+    - Environnement de test
+  </Tab>
+  
+  <Tab title="Suppression">
+    Arrêtez définitivement la planification :
+    - L'historique est conservé
+    - Peut être recréée plus tard
+    - Confirmation requise
+  </Tab>
+</Tabs>
+
+## Exécutions déclenchées par événement
+
+Au-delà de la planification temporelle, vos agents peuvent être déclenchés par des événements.
+
+### Webhooks
+
+Déclenchez votre agent depuis une application externe :
+
+<CodeGroup>
+
+```bash cURL
+curl -X POST https://app.scalt.ai/api/webhook/your-agent-id \
+  -H "Authorization: Bearer YOUR_WEBHOOK_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "customer_email": "client@example.com",
+    "order_id": "ORD-12345",
+    "amount": 299.99
+  }'
+```
+
+```javascript JavaScript
+const response = await fetch('https://app.scalt.ai/api/webhook/your-agent-id', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_WEBHOOK_TOKEN',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    customer_email: 'client@example.com',
+    order_id: 'ORD-12345',
+    amount: 299.99
+  })
+});
+
+const result = await response.json();
+console.log('Agent exécuté :', result.execution_id);
+```
+
+```python Python
+import requests
+
+url = "https://app.scalt.ai/api/webhook/your-agent-id"
+headers = {
+    "Authorization": "Bearer YOUR_WEBHOOK_TOKEN",
+    "Content-Type": "application/json"
+}
+data = {
+    "customer_email": "client@example.com",
+    "order_id": "ORD-12345",
+    "amount": 299.99
+}
+
+response = requests.post(url, headers=headers, json=data)
+result = response.json()
+print(f"Agent exécuté : {result['execution_id']}")
+```
+
+</CodeGroup>
+
+### Événements d'intégration
+
+Déclenchez automatiquement sur des événements de vos outils :
+
+<AccordionGroup>
+  <Accordion icon="envelope" title="Email reçu">
+    ```yaml
+    trigger:
+      type: "event"
+      source: "gmail"
+      event: "email_received"
+      filters:
+        from: "*@client-vip.com"
+        subject_contains: "urgent"
+    ```
+  </Accordion>
+  
+  <Accordion icon="shopping-cart" title="Nouvelle commande">
+    ```yaml
+    trigger:
+      type: "event"
+      source: "shopify"
+      event: "order_created"
+      filters:
+        amount_greater_than: 1000
+        status: "paid"
+    ```
+  </Accordion>
+  
+  <Accordion icon="message" title="Message Slack">
+    ```yaml
+    trigger:
+      type: "event"
+      source: "slack"
+      event: "message_posted"
+      filters:
+        channel: "#support"
+        mentions_bot: true
+    ```
+  </Accordion>
+  
+  <Accordion icon="form" title="Formulaire soumis">
+    ```yaml
+    trigger:
+      type: "event"
+      source: "typeform"
+      event: "form_submitted"
+      filters:
+        form_id: "xyz123"
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## File d'attente et priorités
+
+### Gestion de la file d'attente
+
+Quand plusieurs tâches sont déclenchées simultanément :
+
+<CardGroup cols={2}>
+  <Card title="FIFO (First In, First Out)" icon="list-ol">
+    Par défaut, ordre d'arrivée
+  </Card>
+  <Card title="Priorité" icon="star">
+    Tâches urgentes traitées en premier
+  </Card>
+  <Card title="Parallélisation" icon="layer-group">
+    Exécutions simultanées si autorisé
+  </Card>
+  <Card title="Rate limiting" icon="gauge">
+    Limitation du nombre d'exécutions par période
+  </Card>
+</CardGroup>
+
+### Définir les priorités
+
+```yaml Configuration des priorités
+queue:
+  strategy: "priority"  # fifo, priority, parallel
+  
+  priority_rules:
+    - condition: ${input.customer_tier} == "vip"
+      priority: 1  # Plus haut = plus prioritaire
+    
+    - condition: ${input.amount} > 10000
+      priority: 2
+    
+    - default_priority: 5
+  
+  concurrency:
+    max_parallel: 3  # Maximum 3 exécutions simultanées
+    per_minute: 10   # Maximum 10 exécutions par minute
+```
+
+## Arrêter une exécution en cours
+
+Si vous devez interrompre une tâche :
+
+<Steps>
+  <Step title="Accédez à l'exécution">
+    Depuis le tableau de bord ou la page de l'agent
+  </Step>
+  <Step title="Cliquez sur Arrêter">
+    Bouton **"Arrêter l'exécution"**
+  </Step>
+  <Step title="Choisissez le mode">
+    - **Gracieux** : Termine l'étape en cours puis arrête
+    - **Immédiat** : Arrête instantanément
+  </Step>
+  <Step title="Confirmez">
+    L'exécution est marquée comme "Annulée"
+  </Step>
+</Steps>
+
+<Warning>
+  **Attention** : Un arrêt immédiat peut laisser des actions incomplètes (email envoyé mais ticket non créé, etc.).
+</Warning>
+
+## Historique d'exécution
+
+### Consulter l'historique
+
+Toutes les exécutions sont enregistrées et consultables :
+
+<Tabs>
+  <Tab title="Vue liste">
+    Aperçu de toutes les exécutions :
+    - Date et heure
+    - Durée
+    - Statut (Succès / Échec)
+    - Coût en crédits
+    - Déclencheur (Manuel / Planifié / Événement)
+  </Tab>
+  
+  <Tab title="Vue détaillée">
+    Pour chaque exécution :
+    - Logs complets
+    - Paramètres d'entrée
+    - Résultats produits
+    - Erreurs éventuelles
+    - Métriques de performance
+  </Tab>
+  
+  <Tab title="Analytics">
+    Statistiques agrégées :
+    - Taux de succès
+    - Durée moyenne
+    - Coût total
+    - Tendances temporelles
+  </Tab>
+</Tabs>
+
+### Filtrer et rechercher
+
+```
+Filtres disponibles :
+- 📅 Période : Dernières 24h, 7 jours, 30 jours, Personnalisé
+- ✅ Statut : Tous, Succès, Échoué, En cours, Annulé
+- 🚀 Déclencheur : Tous, Manuel, Planifié, Webhook, Événement
+- 🏷️ Tags : Filtrer par tags d'agent
+- 💰 Coût : Min / Max crédits
+```
+
+### Exporter l'historique
+
+<Steps>
+  <Step title="Sélectionnez la période">
+    Choisissez la plage de dates à exporter
+  </Step>
+  <Step title="Choisissez le format">
+    CSV, JSON, ou Excel
+  </Step>
+  <Step title="Configurez les colonnes">
+    Sélectionnez les données à inclure
+  </Step>
+  <Step title="Exportez">
+    Téléchargez ou recevez par email
+  </Step>
+</Steps>
+
+## Notifications
+
+Restez informé des exécutions de vos agents.
+
+### Configurer les notifications
+
+<Tabs>
+  <Tab title="Email">
+    ```yaml
+    notifications:
+      email:
+        enabled: true
+        recipients: ["admin@entreprise.com", "equipe@entreprise.com"]
+        events:
+          - on_failure
+          - on_success_if_critical
+        include_logs: true
+        include_results: true
+    ```
+  </Tab>
+  
+  <Tab title="Slack">
+    ```yaml
+    notifications:
+      slack:
+        enabled: true
+        webhook_url: "${secrets.SLACK_WEBHOOK}"
+        channel: "#notifications"
+        events:
+          - on_start
+          - on_success
+          - on_failure
+        mentions:
+          on_failure: ["@admin", "@devops"]
+    ```
+  </Tab>
+  
+  <Tab title="Microsoft Teams">
+    ```yaml
+    notifications:
+      teams:
+        enabled: true
+        webhook_url: "${secrets.TEAMS_WEBHOOK}"
+        events:
+          - on_failure
+        adaptive_card: true
+    ```
+  </Tab>
+  
+  <Tab title="Webhook personnalisé">
+    ```yaml
+    notifications:
+      webhook:
+        enabled: true
+        url: "https://api.monentreprise.com/notifications"
+        method: "POST"
+        headers:
+          Authorization: "Bearer ${secrets.NOTIF_TOKEN}"
+        events:
+          - on_success
+          - on_failure
+        payload:
+          agent_id: "${agent.id}"
+          execution_id: "${execution.id}"
+          status: "${execution.status}"
+          duration: "${execution.duration}"
+    ```
+  </Tab>
+</Tabs>
+
+### Événements de notification
+
+<CardGroup cols={2}>
+  <Card title="on_start" icon="play">
+    Quand l'exécution démarre
+  </Card>
+  <Card title="on_success" icon="check">
+    Exécution réussie
+  </Card>
+  <Card title="on_failure" icon="xmark">
+    Exécution échouée
+  </Card>
+  <Card title="on_retry" icon="rotate">
+    Lors d'une nouvelle tentative
+  </Card>
+  <Card title="on_timeout" icon="clock">
+    Dépassement du timeout
+  </Card>
+  <Card title="on_cancel" icon="ban">
+    Exécution annulée
+  </Card>
+</CardGroup>
+
+## Quotas et limites
+
+Surveillez votre consommation :
+
+<CardGroup cols={3}>
+  <Card title="Crédits" icon="coins">
+    Consommation mensuelle de crédits
+  </Card>
+  <Card title="Exécutions" icon="play">
+    Nombre d'exécutions par jour/mois
+  </Card>
+  <Card title="Durée" icon="stopwatch">
+    Temps d'exécution total
+  </Card>
+</CardGroup>
+
+### Alertes de quota
+
+Configurez des alertes avant d'atteindre vos limites :
+
+```yaml
+quota_alerts:
+  credits:
+    threshold: 80  # Alert at 80% of monthly quota
+    recipients: ["admin@entreprise.com"]
+  
+  executions:
+    threshold: 90  # Alert at 90% of monthly executions
+    recipients: ["admin@entreprise.com"]
+```
+
+## Bonnes pratiques
+
+<AccordionGroup>
+  <Accordion icon="lightbulb" title="Planification">
+    - Évitez les heures de pointe pour les tâches lourdes
+    - Espacez les exécutions pour ne pas surcharger les APIs tierces
+    - Utilisez des fuseaux horaires explicites
+    - Testez d'abord avec une fréquence faible
+  </Accordion>
+  
+  <Accordion icon="shield-check" title="Fiabilité">
+    - Configurez toujours une stratégie de réessai
+    - Activez les notifications d'échec
+    - Surveillez régulièrement l'historique
+    - Gardez un agent de secours (fallback)
+  </Accordion>
+  
+  <Accordion icon="dollar-sign" title="Coûts">
+    - Utilisez des modèles économiques pour les tâches simples
+    - Limitez le nombre d'exécutions parallèles
+    - Archivez les agents obsolètes
+    - Surveillez la consommation de crédits
+  </Accordion>
+  
+  <Accordion icon="gauge" title="Performance">
+    - Optimisez les workflows pour réduire le temps d'exécution
+    - Utilisez le cache quand possible
+    - Évitez les boucles infinies
+    - Limitez la taille des données traitées
+  </Accordion>
+</AccordionGroup>
+
+## Dépannage
+
+### L'agent ne s'exécute pas
+
+<Steps>
+  <Step title="Vérifiez que la planification est active">
+    Statut "Activé" dans la liste des planifications
+  </Step>
+  <Step title="Contrôlez la syntaxe cron">
+    Utilisez un validateur de cron
+  </Step>
+  <Step title="Vérifiez le fuseau horaire">
+    Assurez-vous qu'il correspond à vos attentes
+  </Step>
+  <Step title="Consultez les quotas">
+    Vérifiez que vous n'avez pas atteint vos limites
+  </Step>
+</Steps>
+
+### Exécutions qui échouent
+
+<Accordion title="Checklist de diagnostic">
+  - ✅ Toutes les intégrations sont connectées
+  - ✅ Les credentials sont valides et à jour
+  - ✅ Les paramètres d'entrée sont corrects
+  - ✅ Le timeout est suffisant
+  - ✅ Les APIs tierces sont accessibles
+  - ✅ Les quotas des services externes ne sont pas atteints
+</Accordion>
+
+## Prochaines étapes
+
+<CardGroup cols={2}>
+  <Card
+    title="Surveiller les performances"
+    icon="chart-line"
+    href="/guides/monitoring"
+  >
+    Analysez et optimisez vos agents
+  </Card>
+  <Card
+    title="API Reference"
+    icon="code"
+    href="/api-reference/introduction"
+  >
+    Intégrez Scalt programmatiquement
+  </Card>
+</CardGroup>
+

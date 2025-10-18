@@ -1,0 +1,406 @@
+---
+title: "Créer un agent avec l'Assistant Scalt"
+description: "Créez des agents intelligents simplement avec un prompt"
+icon: "wand-magic-sparkles"
+---
+
+## Introduction
+
+L'**Assistant Scalt** est votre copilote pour créer des agents intelligents. Plutôt que de configurer manuellement chaque paramètre, vous décrivez simplement ce que vous voulez automatiser, et l'Assistant génère l'agent pour vous.
+
+<Info>
+  **Simple comme une conversation. Puissant comme du code.**
+</Info>
+
+## Comment fonctionne l'Assistant Scalt ?
+
+L'Assistant Scalt utilise l'intelligence artificielle pour :
+
+1. **Comprendre** votre besoin exprimé en langage naturel
+2. **Analyser** les outils et intégrations disponibles
+3. **Générer** la configuration optimale de l'agent
+4. **Suggérer** des améliorations et optimisations
+
+## Accéder à l'Assistant Scalt
+
+<Steps>
+  <Step title="Ouvrez votre projet">
+    Sélectionnez le projet dans lequel vous souhaitez créer l'agent
+  </Step>
+  <Step title="Lancez l'Assistant">
+    Cliquez sur **"Créer un agent"** puis sélectionnez **"Assistant Scalt"**
+  </Step>
+  <Step title="Commencez la conversation">
+    L'interface de l'Assistant s'ouvre, prête à recevoir vos instructions
+  </Step>
+</Steps>
+
+## Écrire un bon prompt
+
+### Principes de base
+
+Un bon prompt pour l'Assistant Scalt doit être :
+
+<CardGroup cols={2}>
+  <Card title="Clair" icon="lightbulb">
+    Exprimez clairement l'objectif de l'agent
+  </Card>
+  <Card title="Spécifique" icon="bullseye">
+    Précisez les actions à effectuer
+  </Card>
+  <Card title="Contextuel" icon="book">
+    Donnez le contexte métier nécessaire
+  </Card>
+  <Card title="Complet" icon="list-check">
+    Incluez les déclencheurs et résultats attendus
+  </Card>
+</CardGroup>
+
+### Structure recommandée
+
+Utilisez cette structure pour de meilleurs résultats :
+
+```text
+[OBJECTIF] : Que doit faire l'agent ?
+[DÉCLENCHEUR] : Quand doit-il agir ?
+[ACTIONS] : Quelles étapes doit-il suivre ?
+[RÉSULTAT] : Quel est le livrable attendu ?
+```
+
+## Exemples de prompts
+
+### Exemple 1 : Agent de support client
+
+<CodeGroup>
+
+```text Prompt basique
+Créer un agent qui répond aux emails de support client
+```
+
+```text Prompt optimisé
+OBJECTIF : Automatiser les réponses aux demandes de support client
+
+DÉCLENCHEUR : Chaque fois qu'un email arrive sur support@entreprise.com
+
+ACTIONS :
+1. Analyser le contenu de l'email
+2. Identifier le type de demande (technique, facturation, autre)
+3. Chercher dans notre base de connaissances
+4. Générer une réponse appropriée
+5. Si la demande est complexe, créer un ticket et alerter l'équipe
+
+RÉSULTAT : 
+- Email de réponse envoyé au client
+- Ticket créé dans Zendesk si nécessaire
+- Notification Slack pour les cas urgents
+```
+
+</CodeGroup>
+
+<Tip>
+  Plus votre prompt est détaillé, plus l'agent généré sera précis et efficace.
+</Tip>
+
+### Exemple 2 : Génération de leads
+
+```text Prompt complet
+OBJECTIF : Automatiser la qualification et l'enrichissement de leads
+
+DÉCLENCHEUR : Nouveau lead créé dans HubSpot
+
+ACTIONS :
+1. Récupérer les informations du lead depuis HubSpot
+2. Enrichir les données avec LinkedIn Sales Navigator
+3. Rechercher l'entreprise sur Crunchbase
+4. Calculer un score de qualification basé sur :
+   - Taille de l'entreprise (> 50 employés)
+   - Budget estimé (> 100K€)
+   - Secteur d'activité (Tech, Finance)
+   - Position du contact (Director, VP, C-level)
+5. Si score > 70/100 : 
+   - Assigner au commercial
+   - Envoyer notification Slack
+   - Créer une tâche de suivi
+6. Si score < 70/100 : 
+   - Ajouter à la campagne de nurturing
+   - Programmer un rappel dans 30 jours
+
+RÉSULTAT :
+- Lead enrichi et qualifié dans HubSpot
+- Commercial notifié pour les leads chauds
+- Campagne de nurturing pour les leads froids
+```
+
+### Exemple 3 : Reporting automatisé
+
+```text Prompt complet
+OBJECTIF : Générer automatiquement le rapport de performance hebdomadaire
+
+DÉCLENCHEUR : Tous les lundis à 9h00
+
+ACTIONS :
+1. Récupérer les données de la semaine écoulée :
+   - Ventes depuis Shopify
+   - Trafic web depuis Google Analytics
+   - Performances pub depuis Meta Ads et Google Ads
+   - Engagement social media depuis Hootsuite
+2. Calculer les KPIs :
+   - Chiffre d'affaires vs objectif
+   - Taux de conversion
+   - ROI publicitaire
+   - Taux d'engagement
+3. Générer des graphiques et visualisations
+4. Créer un rapport PDF avec analyse et insights
+5. Envoyer par email aux stakeholders
+6. Poster un résumé dans #marketing-metrics sur Slack
+
+RÉSULTAT :
+- Rapport PDF complet envoyé par email
+- Résumé visuel posté sur Slack
+- Données archivées dans Google Drive
+```
+
+## Affiner votre agent avec l'Assistant
+
+L'Assistant Scalt est conversationnel. Vous pouvez affiner votre agent en plusieurs échanges :
+
+<Steps>
+  <Step title="Prompt initial">
+    Décrivez votre besoin général
+  </Step>
+  <Step title="L'Assistant propose">
+    Il génère une première version de l'agent
+  </Step>
+  <Step title="Vous affinez">
+    "Ajoute aussi une vérification anti-spam"
+    "Utilise le modèle GPT-4 au lieu de Claude"
+    "Envoie les notifications sur Teams plutôt que Slack"
+  </Step>
+  <Step title="Itération">
+    L'Assistant ajuste la configuration
+  </Step>
+  <Step title="Validation">
+    Une fois satisfait, validez la création
+  </Step>
+</Steps>
+
+### Exemples d'affinements
+
+```text Conversation avec l'Assistant
+
+Vous : "Créer un agent qui surveille les mentions de notre marque sur Twitter"
+
+Assistant : "J'ai créé un agent qui :
+- Surveille Twitter toutes les heures
+- Recherche les mentions de '@VotreMarque'
+- Enregistre les tweets dans une base de données
+Voulez-vous ajouter quelque chose ?"
+
+Vous : "Ajoute une analyse de sentiment et alerte-moi si c'est négatif"
+
+Assistant : "Parfait ! J'ai ajouté :
+- Analyse de sentiment pour chaque mention
+- Alerte Slack si sentiment négatif ou très négatif
+- Marquage prioritaire dans la base de données
+Autre chose ?"
+
+Vous : "Oui, réponds automatiquement aux mentions positives avec un remerciement"
+
+Assistant : "Ajouté ! L'agent va maintenant :
+- Analyser chaque mention
+- Répondre 'Merci !' aux mentions positives
+- Alerter l'équipe pour les mentions négatives
+Prêt à tester ?"
+```
+
+## Configuration avancée
+
+L'Assistant peut gérer des configurations complexes :
+
+<AccordionGroup>
+  <Accordion icon="brain" title="Choix du modèle IA">
+    Spécifiez quel modèle utiliser :
+    - "Utilise GPT-4 pour plus de précision"
+    - "Utilise Claude pour de longues analyses"
+    - "Utilise Mistral pour réduire les coûts"
+  </Accordion>
+  
+  <Accordion icon="plug" title="Intégrations multiples">
+    Combinez plusieurs outils :
+    - "Récupère les données de Salesforce ET HubSpot"
+    - "Envoie les résultats sur Slack ET par email"
+    - "Synchronise avec Google Sheets ET Notion"
+  </Accordion>
+  
+  <Accordion icon="code" title="Logique conditionnelle">
+    Définissez des règles complexes :
+    - "Si le montant > 10K€, demande validation humaine"
+    - "En dehors des heures de bureau, mets en file d'attente"
+    - "Pour les clients VIP, traite en priorité absolue"
+  </Accordion>
+  
+  <Accordion icon="repeat" title="Gestion d'erreurs">
+    Spécifiez le comportement en cas d'erreur :
+    - "Si l'API ne répond pas, réessaie 3 fois avec délai exponentiel"
+    - "En cas d'échec, envoie une notification et archive la demande"
+    - "Si timeout, passe à l'étape suivante"
+  </Accordion>
+</AccordionGroup>
+
+## Outils et intégrations suggérés
+
+L'Assistant Scalt vous suggère automatiquement les outils nécessaires :
+
+<Tabs>
+  <Tab title="Communication">
+    - **Email** : Gmail, Outlook, SendGrid
+    - **Messagerie** : Slack, Microsoft Teams, Discord
+    - **SMS** : Twilio, Vonage
+  </Tab>
+  
+  <Tab title="CRM & Ventes">
+    - **CRM** : Salesforce, HubSpot, Pipedrive
+    - **E-commerce** : Shopify, WooCommerce, Stripe
+    - **Facturation** : QuickBooks, Xero
+  </Tab>
+  
+  <Tab title="Productivité">
+    - **Calendrier** : Google Calendar, Outlook Calendar
+    - **Documents** : Google Drive, Notion, Airtable
+    - **Gestion de projet** : Asana, Trello, Jira
+  </Tab>
+  
+  <Tab title="Marketing">
+    - **Analytics** : Google Analytics, Mixpanel
+    - **Publicité** : Meta Ads, Google Ads
+    - **Social Media** : Twitter, LinkedIn, Instagram
+  </Tab>
+  
+  <Tab title="Développement">
+    - **Code repos** : GitHub, GitLab
+    - **CI/CD** : Jenkins, CircleCI
+    - **Monitoring** : Datadog, Sentry
+  </Tab>
+</Tabs>
+
+## Réviser la configuration générée
+
+Avant de finaliser, l'Assistant vous montre :
+
+<CardGroup cols={2}>
+  <Card title="Configuration de l'agent" icon="sliders">
+    Nom, description, modèle IA, paramètres
+  </Card>
+  <Card title="Workflow d'exécution" icon="diagram-project">
+    Étapes détaillées et logique
+  </Card>
+  <Card title="Outils connectés" icon="plug">
+    Liste des intégrations nécessaires
+  </Card>
+  <Card title="Déclencheurs" icon="bolt">
+    Quand et comment l'agent s'exécute
+  </Card>
+</CardGroup>
+
+Vous pouvez :
+- ✅ **Valider** et créer l'agent
+- ✏️ **Modifier** manuellement les détails
+- 🔄 **Demander des ajustements** à l'Assistant
+- ❌ **Recommencer** avec un nouveau prompt
+
+## Tester votre agent
+
+Une fois créé, testez immédiatement votre agent :
+
+<Steps>
+  <Step title="Accédez au Playground">
+    L'Assistant vous redirige automatiquement vers le Playground
+  </Step>
+  <Step title="Simulez des scénarios">
+    Testez avec des données réelles ou des exemples
+  </Step>
+  <Step title="Vérifiez les résultats">
+    Examinez les actions effectuées et les résultats
+  </Step>
+  <Step title="Ajustez si nécessaire">
+    Retournez à l'Assistant pour des modifications
+  </Step>
+</Steps>
+
+<Tip>
+  Le Playground utilise un environnement isolé. Les actions ne sont pas exécutées réellement (emails non envoyés, données non modifiées).
+</Tip>
+
+## Cas d'usage populaires
+
+Inspirez-vous de ces exemples :
+
+<AccordionGroup>
+  <Accordion icon="envelope" title="Email automatisé">
+    "Créer un agent qui envoie un email de bienvenue personnalisé à chaque nouveau client avec des conseils basés sur leur profil"
+  </Accordion>
+  
+  <Accordion icon="magnifying-glass" title="Veille concurrentielle">
+    "Créer un agent qui surveille les prix des concurrents sur leur site web chaque jour et m'alerte s'ils baissent leurs prix"
+  </Accordion>
+  
+  <Accordion icon="user-plus" title="Onboarding client">
+    "Créer un agent qui automatise l'onboarding : crée les comptes, envoie les accès, planifie une démo et ajoute au CRM"
+  </Accordion>
+  
+  <Accordion icon="file-invoice-dollar" title="Facturation automatique">
+    "Créer un agent qui génère et envoie les factures le 1er du mois, relance les impayés après 15 jours, et met à jour la comptabilité"
+  </Accordion>
+  
+  <Accordion icon="chart-mixed" title="Reporting BI">
+    "Créer un agent qui consolide les données de ventes, marketing et finance dans un tableau de bord Power BI actualisé en temps réel"
+  </Accordion>
+</AccordionGroup>
+
+## Limites et considérations
+
+<Warning>
+  **Points d'attention** :
+  
+  - L'Assistant génère une configuration de base. Pour des besoins très complexes, une édition manuelle peut être nécessaire.
+  - Vérifiez toujours les permissions et accès aux outils tiers.
+  - Testez en profondeur avant de déployer en production.
+  - Les agents génèrent des coûts (crédits Scalt + APIs tierces).
+</Warning>
+
+## Bonnes pratiques
+
+<CardGroup cols={2}>
+  <Card title="Commencez simple" icon="seedling">
+    Créez une version basique puis enrichissez progressivement
+  </Card>
+  <Card title="Testez régulièrement" icon="flask">
+    Vérifiez chaque ajout avant de complexifier
+  </Card>
+  <Card title="Documentez" icon="book">
+    Ajoutez des commentaires pour vous et votre équipe
+  </Card>
+  <Card title="Surveillez" icon="chart-line">
+    Vérifiez les performances et coûts régulièrement
+  </Card>
+</CardGroup>
+
+## Prochaines étapes
+
+<CardGroup cols={2}>
+  <Card
+    title="Éditer votre agent"
+    icon="pen-to-square"
+    href="/guides/edit-agent"
+  >
+    Personnalisez et optimisez votre agent
+  </Card>
+  <Card
+    title="Lancer des tâches"
+    icon="play"
+    href="/guides/run-tasks"
+  >
+    Exécutez et planifiez vos automatisations
+  </Card>
+</CardGroup>
+

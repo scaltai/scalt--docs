@@ -1,0 +1,323 @@
+---
+title: "Gestion de projets"
+description: "Organisez vos agents et automatisations par projet"
+icon: "folder"
+---
+
+## Introduction
+
+Les projets dans Scalt vous permettent d'organiser vos agents, automatisations et ressources de manière structurée. Chaque projet représente généralement un domaine métier, un département ou un cas d'usage spécifique.
+
+<Info>
+  **Bonne pratique** : Créez un projet par département (Marketing, Ventes, Support) ou par cas d'usage (Lead Generation, Customer Success, Reporting).
+</Info>
+
+## Créer un nouveau projet
+
+### Via le tableau de bord
+
+<Steps>
+  <Step title="Accédez aux projets">
+    Depuis votre tableau de bord, cliquez sur **"Projets"** dans le menu principal
+  </Step>
+  <Step title="Créez un projet">
+    Cliquez sur le bouton **"Nouveau projet"**
+  </Step>
+  <Step title="Remplissez les informations">
+    - **Nom** : Un nom descriptif (ex: "Marketing Automation")
+    - **Description** : Expliquez l'objectif du projet
+    - **Icône** : Choisissez une icône pour identifier rapidement le projet
+  </Step>
+  <Step title="Configurez les paramètres">
+    - **Visibilité** : Privé ou partagé avec votre organisation
+    - **Membres** : Invitez les collaborateurs
+    - **Permissions** : Définissez les droits d'accès
+  </Step>
+</Steps>
+
+## Structure d'un projet
+
+Un projet Scalt contient plusieurs éléments :
+
+<CardGroup cols={2}>
+  <Card title="Agents" icon="robot">
+    Tous les agents (Scalters) créés dans ce projet
+  </Card>
+  <Card title="Outils & Intégrations" icon="plug">
+    Les connexions aux APIs et outils MCP configurés
+  </Card>
+  <Card title="Base de connaissances" icon="book">
+    Documents et fichiers partagés entre agents
+  </Card>
+  <Card title="Historique d'exécution" icon="clock-rotate-left">
+    Logs et résultats de toutes les tâches exécutées
+  </Card>
+  <Card title="Planifications" icon="calendar">
+    Tâches programmées et workflows automatiques
+  </Card>
+  <Card title="Métriques" icon="chart-line">
+    Analytics et rapports de performance
+  </Card>
+</CardGroup>
+
+## Gérer les membres du projet
+
+### Inviter des collaborateurs
+
+<Steps>
+  <Step title="Accédez aux paramètres">
+    Ouvrez votre projet et cliquez sur **"Paramètres"** > **"Membres"**
+  </Step>
+  <Step title="Ajoutez des membres">
+    Cliquez sur **"Inviter"** et entrez les emails de vos collaborateurs
+  </Step>
+  <Step title="Définissez les rôles">
+    Choisissez le niveau d'accès pour chaque membre :
+    - **Administrateur** : Gestion complète du projet
+    - **Éditeur** : Peut créer et modifier des agents
+    - **Lecteur** : Consultation uniquement
+  </Step>
+</Steps>
+
+### Rôles et permissions
+
+<AccordionGroup>
+  <Accordion icon="crown" title="Administrateur">
+    - Créer, éditer et supprimer des agents
+    - Gérer les membres et permissions
+    - Configurer les intégrations
+    - Accéder aux paramètres du projet
+    - Supprimer le projet
+  </Accordion>
+  
+  <Accordion icon="pen" title="Éditeur">
+    - Créer et éditer des agents
+    - Lancer et planifier des tâches
+    - Accéder aux logs et métriques
+    - Ajouter des documents à la base de connaissances
+  </Accordion>
+  
+  <Accordion icon="eye" title="Lecteur">
+    - Consulter les agents
+    - Voir l'historique d'exécution
+    - Accéder aux métriques
+    - Exporter les rapports
+  </Accordion>
+</AccordionGroup>
+
+## Organiser vos agents
+
+### Utiliser les tags et labels
+
+Organisez vos agents avec des tags pour les retrouver facilement :
+
+```
+Tags recommandés :
+- Par fonction : "marketing", "ventes", "support"
+- Par priorité : "critique", "important", "normal"
+- Par statut : "production", "test", "développement"
+- Par fréquence : "temps-réel", "quotidien", "hebdomadaire"
+```
+
+### Créer des dossiers
+
+<Tip>
+  Utilisez des dossiers pour regrouper les agents liés. Par exemple : "Génération de leads" peut contenir plusieurs agents travaillant ensemble.
+</Tip>
+
+## Partager des ressources entre agents
+
+### Base de connaissances partagée
+
+Tous les agents d'un projet peuvent accéder à la base de connaissances partagée :
+
+<Steps>
+  <Step title="Uploadez des documents">
+    Dans **"Base de connaissances"**, ajoutez vos fichiers (PDF, Word, Excel, CSV...)
+  </Step>
+  <Step title="Organisez par catégories">
+    Créez des dossiers thématiques (Produits, Processus, Clients...)
+  </Step>
+  <Step title="Indexation automatique">
+    Scalt indexe automatiquement vos documents pour que les agents puissent y accéder
+  </Step>
+</Steps>
+
+### Outils partagés
+
+Configurez une fois, utilisez partout :
+
+- **Intégrations MCP** : Connectez Slack, Gmail, CRM une seule fois
+- **APIs personnalisées** : Définissez vos endpoints au niveau projet
+- **Webhooks** : Recevez des notifications pour tous les agents
+
+## Surveiller les performances du projet
+
+### Dashboard analytique
+
+Accédez aux métriques clés de votre projet :
+
+<CardGroup cols={3}>
+  <Card title="Exécutions" icon="play">
+    Nombre total de tâches exécutées
+  </Card>
+  <Card title="Taux de succès" icon="check">
+    Pourcentage d'exécutions réussies
+  </Card>
+  <Card title="Coût" icon="dollar-sign">
+    Consommation de crédits
+  </Card>
+  <Card title="Temps d'exécution" icon="stopwatch">
+    Durée moyenne des tâches
+  </Card>
+  <Card title="Agents actifs" icon="robot">
+    Nombre d'agents en production
+  </Card>
+  <Card title="Économies de temps" icon="hourglass">
+    Heures automatisées
+  </Card>
+</CardGroup>
+
+### Alertes et notifications
+
+Configurez des alertes pour rester informé :
+
+<Accordion title="Types d'alertes disponibles">
+  - **Échec d'exécution** : Soyez notifié en cas d'erreur
+  - **Dépassement de budget** : Alerte si le coût dépasse un seuil
+  - **Performance dégradée** : Notification si le temps d'exécution augmente
+  - **Quota atteint** : Alerte avant d'atteindre les limites
+</Accordion>
+
+## Paramètres du projet
+
+### Configuration générale
+
+<AccordionGroup>
+  <Accordion icon="sliders" title="Paramètres de base">
+    - Nom et description du projet
+    - Icône et couleur
+    - Fuseau horaire par défaut
+    - Langue des agents
+  </Accordion>
+  
+  <Accordion icon="shield" title="Sécurité">
+    - Authentification à deux facteurs (2FA)
+    - Liste blanche d'IPs
+    - Rotation automatique des clés API
+    - Logs d'audit
+  </Accordion>
+  
+  <Accordion icon="wallet" title="Facturation">
+    - Limite de crédits mensuelle
+    - Méthode de paiement
+    - Historique de facturation
+    - Rapports de consommation
+  </Accordion>
+  
+  <Accordion icon="bell" title="Notifications">
+    - Email, Slack, Teams, Webhook
+    - Fréquence des rapports
+    - Événements à surveiller
+  </Accordion>
+</AccordionGroup>
+
+## Dupliquer un projet
+
+Pour créer un environnement de test ou déployer dans une autre organisation :
+
+<Steps>
+  <Step title="Sélectionnez le projet">
+    Accédez au projet que vous souhaitez dupliquer
+  </Step>
+  <Step title="Dupliquez">
+    Cliquez sur **"Actions"** > **"Dupliquer le projet"**
+  </Step>
+  <Step title="Choisissez les éléments">
+    Sélectionnez ce que vous voulez copier :
+    - ✅ Agents et leur configuration
+    - ✅ Outils et intégrations
+    - ✅ Base de connaissances
+    - ❌ Historique d'exécution (non copié)
+    - ❌ Membres (à réinviter)
+  </Step>
+</Steps>
+
+<Warning>
+  Les credentials et tokens ne sont jamais copiés pour des raisons de sécurité. Vous devrez les reconfigurer dans le nouveau projet.
+</Warning>
+
+## Archiver ou supprimer un projet
+
+### Archiver un projet
+
+L'archivage permet de conserver les données tout en désactivant le projet :
+
+- Les agents ne s'exécutent plus
+- Les planifications sont suspendues
+- Les données restent accessibles en lecture seule
+- Aucun coût n'est encouru pour un projet archivé
+
+### Supprimer un projet
+
+<Warning>
+  **Action irréversible** : La suppression d'un projet entraîne la perte définitive de :
+  - Tous les agents
+  - L'historique d'exécution
+  - Les logs et métriques
+  - La base de connaissances
+  
+  Pensez à exporter vos données importantes avant de supprimer !
+</Warning>
+
+## Bonnes pratiques
+
+<AccordionGroup>
+  <Accordion icon="lightbulb" title="Organisation">
+    - Un projet = un domaine métier clairement défini
+    - Utilisez des noms descriptifs et cohérents
+    - Documentez l'objectif de chaque projet
+    - Créez un projet "Test" pour expérimenter
+  </Accordion>
+  
+  <Accordion icon="users" title="Collaboration">
+    - Invitez uniquement les personnes nécessaires
+    - Utilisez le principe du moindre privilège
+    - Documentez vos agents pour les autres membres
+    - Partagez les bonnes pratiques via la base de connaissances
+  </Accordion>
+  
+  <Accordion icon="chart-line" title="Performance">
+    - Surveillez régulièrement les métriques
+    - Archivez les agents obsolètes
+    - Optimisez les agents qui consomment beaucoup
+    - Mettez en place des alertes préventives
+  </Accordion>
+  
+  <Accordion icon="lock" title="Sécurité">
+    - Activez l'authentification 2FA
+    - Révisez les accès tous les trimestres
+    - Utilisez des variables d'environnement pour les secrets
+    - Auditez régulièrement les logs
+  </Accordion>
+</AccordionGroup>
+
+## Prochaines étapes
+
+<CardGroup cols={2}>
+  <Card
+    title="Créer votre premier agent"
+    icon="wand-magic-sparkles"
+    href="/guides/create-agent"
+  >
+    Utilisez l'Assistant Scalt pour créer un agent
+  </Card>
+  <Card
+    title="Configurer les intégrations"
+    icon="plug"
+    href="/guides/integrations"
+  >
+    Connectez vos outils préférés
+  </Card>
+</CardGroup>
+
