@@ -1,0 +1,220 @@
+---
+title: "Quick Start"
+description: "Create your first Scalt agent in 5 minutes"
+---
+
+## Introduction
+
+Welcome to Scalt! This guide will walk you through creating your first intelligent agent in just a few minutes.
+
+<Note>
+  **Prerequisites**: You must have a Scalt account. If not, [join the private beta](https://scalt.ai).
+</Note>
+
+## Step 1: Create your project
+
+Projects allow you to organize your agents and automations by business domain.
+
+<Steps>
+  <Step title="Access the dashboard">
+    Log in to your [Scalt dashboard](https://app.scalt.ai)
+  </Step>
+  <Step title="Create a new project">
+    Click **"New project"** and give it a descriptive name (e.g., "Marketing Automation" or "Customer Support")
+  </Step>
+  <Step title="Configure settings">
+    Set basic parameters: name, description, and invite team members if needed
+  </Step>
+</Steps>
+
+<Tip>
+  Organize your projects by department or use case to facilitate agent management.
+</Tip>
+
+## Step 2: Create your first agent with Scalt Assistant
+
+Scalt Assistant allows you to create agents simply by describing what you want to automate.
+
+<Steps>
+  <Step title="Open Scalt Assistant">
+    In your project, click **"Create an agent"** then select **"Scalt Assistant"**
+  </Step>
+  <Step title="Describe your need">
+    Simply express what you want to automate, for example:
+    
+    ```
+    "Create an agent that monitors my emails, identifies urgent customer 
+    requests and automatically creates tickets in our support system"
+    ```
+  </Step>
+  <Step title="Assistant generates your agent">
+    Scalt Assistant analyzes your request and automatically generates:
+    - The agent configuration
+    - The necessary tools
+    - The execution workflow
+  </Step>
+</Steps>
+
+<CodeGroup>
+
+```text Simple prompt example
+Create an agent that analyzes my daily sales and sends me a summary every morning
+```
+
+```text Advanced prompt example
+Create an agent that:
+1. Retrieves new leads from HubSpot
+2. Enriches data with LinkedIn
+3. Scores leads according to our criteria
+4. Sends the best leads to the sales team via Slack
+```
+
+</CodeGroup>
+
+## Step 3: Configure your agent
+
+Once your agent is created, customize it according to your needs.
+
+<AccordionGroup>
+  <Accordion icon="plug" title="Connect your tools">
+    Add necessary integrations:
+    - **MCP Tools**: Connect your favorite applications
+    - **APIs**: Integrate your custom APIs
+    - **Documents**: Upload knowledge files for your agent
+  </Accordion>
+  
+  <Accordion icon="sliders" title="Adjust settings">
+    Customize your agent's behavior:
+    - **AI Model**: Choose between GPT-4, Claude, Mistral...
+    - **Temperature**: Adjust response creativity
+    - **Timeout**: Define maximum execution duration
+  </Accordion>
+  
+  <Accordion icon="book" title="Enrich the knowledge base">
+    Give context to your agent:
+    - Upload PDF, Word, Excel documents
+    - Add links to your documentation
+    - Define specific instructions
+  </Accordion>
+</AccordionGroup>
+
+## Step 4: Test in the Playground
+
+Before deploying, test your agent in a secure environment.
+
+<Steps>
+  <Step title="Open the Playground">
+    Click **"Test"** to access the Playground
+  </Step>
+  <Step title="Simulate scenarios">
+    Test different use cases to verify your agent's behavior
+  </Step>
+  <Step title="Analyze results">
+    Examine logs, tool calls, and generated responses
+  </Step>
+  <Step title="Iterate if necessary">
+    Adjust the configuration until you get the desired behavior
+  </Step>
+</Steps>
+
+<Warning>
+  **Important**: Always test your agent in the Playground before deploying to production to avoid costly errors.
+</Warning>
+
+## Step 5: Launch your agent
+
+Once satisfied with testing, deploy your agent.
+
+<Tabs>
+  <Tab title="Immediate execution">
+    To launch a task immediately:
+    
+    1. Click **"Execute now"**
+    2. Provide input parameters if necessary
+    3. Follow real-time execution
+    4. Check results once completed
+  </Tab>
+  
+  <Tab title="Scheduling">
+    To schedule recurring execution:
+    
+    1. Click **"Schedule"**
+    2. Choose frequency (daily, weekly, monthly, or custom cron)
+    3. Set execution time
+    4. Enable scheduling
+    
+    <Tip>
+      Use cron syntax for complex schedules (e.g., `0 9 * * 1-5` for weekdays at 9am)
+    </Tip>
+  </Tab>
+</Tabs>
+
+## Monitor your agent's execution
+
+Once your agent is running, monitor its performance.
+
+<CardGroup cols={3}>
+  <Card title="Real-time logs" icon="scroll">
+    Visualize your agent's actions live
+  </Card>
+  <Card title="Execution history" icon="clock-rotate-left">
+    Access all past executions
+  </Card>
+  <Card title="Metrics" icon="chart-simple">
+    Analyze performance and cost
+  </Card>
+</CardGroup>
+
+## Next steps
+
+Congratulations! You've created and deployed your first Scalt agent. 🎉
+
+<CardGroup cols={2}>
+  <Card
+    title="Edit your agent"
+    icon="pen-to-square"
+    href="/en/guides/edit-agent"
+  >
+    Learn to modify and improve your existing agents
+  </Card>
+  <Card
+    title="Project management"
+    icon="folder-tree"
+    href="/en/guides/projects"
+  >
+    Effectively organize your agents and teams
+  </Card>
+  <Card
+    title="Agent orchestration"
+    icon="network-wired"
+    href="/en/guides/coming-soon"
+  >
+    Create collaborating agent teams (coming soon)
+  </Card>
+  <Card
+    title="Scalt Factory"
+    icon="store"
+    href="/en/guides/coming-soon"
+  >
+    Explore the specialized agent marketplace (coming soon)
+  </Card>
+</CardGroup>
+
+## Need help?
+
+<Card
+  title="Scalt Support"
+  icon="life-ring"
+  href="https://scalt.ai/contact"
+  horizontal
+>
+  Our team is here to support you. Contact us via chat or email.
+</Card>
+
+<Note>
+  **Additional resources**:
+  - [Use case examples](https://scalt.ai/blog)
+  - [API Documentation](/en/api-reference/introduction)
+  - [Scalt Community](https://community.scalt.ai)
+</Note>
+

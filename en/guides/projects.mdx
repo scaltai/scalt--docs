@@ -1,0 +1,323 @@
+---
+title: "Project Management"
+description: "Organize your agents and automations by project"
+icon: "folder"
+---
+
+## Introduction
+
+Projects in Scalt allow you to organize your agents, automations, and resources in a structured way. Each project typically represents a business domain, department, or specific use case.
+
+<Info>
+  **Best practice**: Create one project per department (Marketing, Sales, Support) or per use case (Lead Generation, Customer Success, Reporting).
+</Info>
+
+## Create a new project
+
+### Via the dashboard
+
+<Steps>
+  <Step title="Access projects">
+    From your dashboard, click **"Projects"** in the main menu
+  </Step>
+  <Step title="Create a project">
+    Click the **"New project"** button
+  </Step>
+  <Step title="Fill in the information">
+    - **Name**: A descriptive name (e.g., "Marketing Automation")
+    - **Description**: Explain the project's objective
+    - **Icon**: Choose an icon to quickly identify the project
+  </Step>
+  <Step title="Configure settings">
+    - **Visibility**: Private or shared with your organization
+    - **Members**: Invite collaborators
+    - **Permissions**: Define access rights
+  </Step>
+</Steps>
+
+## Project structure
+
+A Scalt project contains several elements:
+
+<CardGroup cols={2}>
+  <Card title="Agents" icon="robot">
+    All agents (Scalters) created in this project
+  </Card>
+  <Card title="Tools & Integrations" icon="plug">
+    Connections to configured APIs and MCP tools
+  </Card>
+  <Card title="Knowledge base" icon="book">
+    Documents and files shared between agents
+  </Card>
+  <Card title="Execution history" icon="clock-rotate-left">
+    Logs and results of all executed tasks
+  </Card>
+  <Card title="Schedules" icon="calendar">
+    Scheduled tasks and automatic workflows
+  </Card>
+  <Card title="Metrics" icon="chart-line">
+    Analytics and performance reports
+  </Card>
+</CardGroup>
+
+## Manage project members
+
+### Invite collaborators
+
+<Steps>
+  <Step title="Access settings">
+    Open your project and click **"Settings"** > **"Members"**
+  </Step>
+  <Step title="Add members">
+    Click **"Invite"** and enter your collaborators' emails
+  </Step>
+  <Step title="Define roles">
+    Choose the access level for each member:
+    - **Administrator**: Full project management
+    - **Editor**: Can create and modify agents
+    - **Reader**: View only
+  </Step>
+</Steps>
+
+### Roles and permissions
+
+<AccordionGroup>
+  <Accordion icon="crown" title="Administrator">
+    - Create, edit, and delete agents
+    - Manage members and permissions
+    - Configure integrations
+    - Access project settings
+    - Delete project
+  </Accordion>
+  
+  <Accordion icon="pen" title="Editor">
+    - Create and edit agents
+    - Launch and schedule tasks
+    - Access logs and metrics
+    - Add documents to knowledge base
+  </Accordion>
+  
+  <Accordion icon="eye" title="Reader">
+    - View agents
+    - See execution history
+    - Access metrics
+    - Export reports
+  </Accordion>
+</AccordionGroup>
+
+## Organize your agents
+
+### Use tags and labels
+
+Organize your agents with tags to find them easily:
+
+```
+Recommended tags:
+- By function: "marketing", "sales", "support"
+- By priority: "critical", "important", "normal"
+- By status: "production", "test", "development"
+- By frequency: "real-time", "daily", "weekly"
+```
+
+### Create folders
+
+<Tip>
+  Use folders to group related agents. For example: "Lead Generation" can contain multiple agents working together.
+</Tip>
+
+## Share resources between agents
+
+### Shared knowledge base
+
+All agents in a project can access the shared knowledge base:
+
+<Steps>
+  <Step title="Upload documents">
+    In **"Knowledge base"**, add your files (PDF, Word, Excel, CSV...)
+  </Step>
+  <Step title="Organize by categories">
+    Create thematic folders (Products, Processes, Customers...)
+  </Step>
+  <Step title="Automatic indexing">
+    Scalt automatically indexes your documents for agent access
+  </Step>
+</Steps>
+
+### Shared tools
+
+Configure once, use everywhere:
+
+- **MCP Integrations**: Connect Slack, Gmail, CRM once
+- **Custom APIs**: Define your endpoints at project level
+- **Webhooks**: Receive notifications for all agents
+
+## Monitor project performance
+
+### Analytics dashboard
+
+Access your project's key metrics:
+
+<CardGroup cols={3}>
+  <Card title="Executions" icon="play">
+    Total number of tasks executed
+  </Card>
+  <Card title="Success rate" icon="check">
+    Percentage of successful executions
+  </Card>
+  <Card title="Cost" icon="dollar-sign">
+    Credit consumption
+  </Card>
+  <Card title="Execution time" icon="stopwatch">
+    Average task duration
+  </Card>
+  <Card title="Active agents" icon="robot">
+    Number of agents in production
+  </Card>
+  <Card title="Time savings" icon="hourglass">
+    Automated hours
+  </Card>
+</CardGroup>
+
+### Alerts and notifications
+
+Configure alerts to stay informed:
+
+<Accordion title="Available alert types">
+  - **Execution failure**: Be notified in case of error
+  - **Budget exceeded**: Alert if cost exceeds a threshold
+  - **Performance degraded**: Notification if execution time increases
+  - **Quota reached**: Alert before reaching limits
+</Accordion>
+
+## Project settings
+
+### General configuration
+
+<AccordionGroup>
+  <Accordion icon="sliders" title="Basic settings">
+    - Project name and description
+    - Icon and color
+    - Default timezone
+    - Agent language
+  </Accordion>
+  
+  <Accordion icon="shield" title="Security">
+    - Two-factor authentication (2FA)
+    - IP whitelist
+    - Automatic API key rotation
+    - Audit logs
+  </Accordion>
+  
+  <Accordion icon="wallet" title="Billing">
+    - Monthly credit limit
+    - Payment method
+    - Billing history
+    - Consumption reports
+  </Accordion>
+  
+  <Accordion icon="bell" title="Notifications">
+    - Email, Slack, Teams, Webhook
+    - Report frequency
+    - Events to monitor
+  </Accordion>
+</AccordionGroup>
+
+## Duplicate a project
+
+To create a test environment or deploy to another organization:
+
+<Steps>
+  <Step title="Select the project">
+    Access the project you want to duplicate
+  </Step>
+  <Step title="Duplicate">
+    Click **"Actions"** > **"Duplicate project"**
+  </Step>
+  <Step title="Choose elements">
+    Select what you want to copy:
+    - ✅ Agents and their configuration
+    - ✅ Tools and integrations
+    - ✅ Knowledge base
+    - ❌ Execution history (not copied)
+    - ❌ Members (to be re-invited)
+  </Step>
+</Steps>
+
+<Warning>
+  Credentials and tokens are never copied for security reasons. You will need to reconfigure them in the new project.
+</Warning>
+
+## Archive or delete a project
+
+### Archive a project
+
+Archiving allows you to keep data while deactivating the project:
+
+- Agents no longer execute
+- Schedules are suspended
+- Data remains accessible in read-only mode
+- No cost incurred for an archived project
+
+### Delete a project
+
+<Warning>
+  **Irreversible action**: Deleting a project results in permanent loss of:
+  - All agents
+  - Execution history
+  - Logs and metrics
+  - Knowledge base
+  
+  Remember to export your important data before deleting!
+</Warning>
+
+## Best practices
+
+<AccordionGroup>
+  <Accordion icon="lightbulb" title="Organization">
+    - One project = one clearly defined business domain
+    - Use descriptive and consistent names
+    - Document each project's objective
+    - Create a "Test" project to experiment
+  </Accordion>
+  
+  <Accordion icon="users" title="Collaboration">
+    - Invite only necessary people
+    - Use principle of least privilege
+    - Document your agents for other members
+    - Share best practices via knowledge base
+  </Accordion>
+  
+  <Accordion icon="chart-line" title="Performance">
+    - Regularly monitor metrics
+    - Archive obsolete agents
+    - Optimize agents that consume heavily
+    - Set up preventive alerts
+  </Accordion>
+  
+  <Accordion icon="lock" title="Security">
+    - Enable 2FA authentication
+    - Review access quarterly
+    - Use environment variables for secrets
+    - Regularly audit logs
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Create your first agent"
+    icon="wand-magic-sparkles"
+    href="/en/guides/create-agent"
+  >
+    Use Scalt Assistant to create an agent
+  </Card>
+  <Card
+    title="Configure integrations"
+    icon="plug"
+    href="/en/guides/integrations"
+  >
+    Connect your favorite tools
+  </Card>
+</CardGroup>
+

@@ -1,0 +1,366 @@
+---
+title: "Upcoming features"
+description: "Discover Scalt's next innovations: Factory and agent orchestration"
+icon: "sparkles"
+---
+
+## Introduction
+
+Scalt is constantly evolving to offer you the best AI automation solutions. Here's an overview of major features in development.
+
+<Note>
+  **Join the private beta** to be among the first to test these new features. [Sign up here](https://scalt.ai).
+</Note>
+
+## Scalt Factory
+
+### What is Scalt Factory?
+
+**Scalt Factory** is a marketplace of specialized intelligent agents, ready to use. No need to create each agent from scratch: choose an expert Scalter, customize it to your needs, and deploy in a few clicks.
+
+<CardGroup cols={2}>
+  <Card title="Ready-to-use agents" icon="box">
+    Hundreds of pre-configured agents for all needs
+  </Card>
+  <Card title="Created by experts" icon="star">
+    Developed by Scalt team and our community
+  </Card>
+  <Card title="1-click installation" icon="mouse-pointer">
+    Deploy instantly to your project
+  </Card>
+  <Card title="Customizable" icon="sliders">
+    Adapt each agent to your context
+  </Card>
+</CardGroup>
+
+### Available agent categories
+
+<Tabs>
+  <Tab title="Marketing & Sales">
+    <AccordionGroup>
+      <Accordion icon="chart-line" title="Lead Generation Pro">
+        Automatically identifies, qualifies and enriches your leads from multiple sources (LinkedIn, websites, forms).
+        
+        **What it does**:
+        - Intelligent data scraping
+        - Multi-source enrichment
+        - Automatic scoring
+        - Assignment to right sales rep
+      </Accordion>
+      
+      <Accordion icon="envelope" title="Email Campaign Optimizer">
+        Optimizes your email campaigns with A/B testing, personalization and intelligent timing.
+        
+        **What it does**:
+        - Dynamic personalization
+        - Best time sending
+        - Performance analysis
+        - Improvement suggestions
+      </Accordion>
+      
+      <Accordion icon="magnifying-glass-chart" title="Competitor Intelligence">
+        Monitors your competitors: prices, products, marketing, recruitment.
+        
+        **What it does**:
+        - Competitor website monitoring
+        - Price change alerts
+        - Ad campaign analysis
+        - Weekly reports
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+  
+  <Tab title="Customer Support">
+    <AccordionGroup>
+      <Accordion icon="headset" title="Smart Support Assistant">
+        Automatically responds to support requests with your product data and FAQ.
+        
+        **What it does**:
+        - 24/7 instant responses
+        - Ticket creation if needed
+        - Intelligent escalation
+        - Continuous learning
+      </Accordion>
+      
+      <Accordion icon="star-half-stroke" title="Sentiment Analyzer">
+        Analyzes customer interaction sentiment and alerts on critical cases.
+        
+        **What it does**:
+        - Real-time sentiment analysis
+        - Unhappy customer detection
+        - Automatic prioritization
+        - Satisfaction dashboard
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+  
+  <Tab title="Finance & Admin">
+    <AccordionGroup>
+      <Accordion icon="file-invoice-dollar" title="Invoice Automation">
+        Automates generation, sending and tracking of your invoices.
+        
+        **What it does**:
+        - Automatic invoice generation
+        - Sending and reminders
+        - Bank reconciliation
+        - Financial reports
+      </Accordion>
+      
+      <Accordion icon="receipt" title="Expense Tracker">
+        Extracts and categorizes expenses automatically from emails and documents.
+        
+        **What it does**:
+        - Receipt OCR
+        - Intelligent categorization
+        - Duplicate detection
+        - Accounting export
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+</Tabs>
+
+### How to use Scalt Factory
+
+<Steps>
+  <Step title="Browse catalog">
+    Explore hundreds of available agents by category or search
+  </Step>
+  <Step title="Preview agent">
+    View description, reviews, usage examples
+  </Step>
+  <Step title="Install in 1 click">
+    Agent is automatically added to your project
+  </Step>
+  <Step title="Customize">
+    Adapt configuration to your specific context
+  </Step>
+  <Step title="Test and deploy">
+    Verify in Playground then launch to production
+  </Step>
+</Steps>
+
+## Agent Orchestration (Magentic)
+
+### What is agent orchestration?
+
+**Agent orchestration** allows you to create **agent teams** that collaborate to accomplish complex tasks. Each agent has its specialized role, and together they form an intelligent and coordinated system.
+
+<Info>
+  **Powered by Magentic**: We use the Magentic framework for multi-agent orchestration, enabling intelligent and autonomous coordination.
+</Info>
+
+### Why orchestration?
+
+<Tabs>
+  <Tab title="Complex tasks">
+    Some tasks require multiple skills:
+    
+    **Example: Product launch**
+    - **Marketing Agent**: Creates content and visuals
+    - **Social Media Agent**: Schedules posts
+    - **Analytics Agent**: Tracks performance
+    - **CRM Agent**: Updates customer segments
+    - **Orchestrator**: Coordinates everything
+  </Tab>
+  
+  <Tab title="Specialization">
+    Each agent excels in its domain:
+    
+    - **Writer Agent**: Optimized copywriting
+    - **Translator Agent**: Native multilingual
+    - **SEO Agent**: Search engine optimization
+    - **Designer Agent**: Image generation
+    
+    Together, they produce superior quality content.
+  </Tab>
+  
+  <Tab title="Scalability">
+    Adapt number of agents according to load:
+    
+    - **Normal traffic**: 1 support agent
+    - **Activity peak**: 5 agents in parallel
+    - **Automatic**: Scale up/down as needed
+  </Tab>
+</Tabs>
+
+### Orchestration modes
+
+<Tabs>
+  <Tab title="Sequential">
+    Agents execute one after another.
+    
+    ```yaml
+    orchestration:
+      mode: "sequential"
+      agents:
+        - id: "data-collector"
+          output: "raw_data"
+        
+        - id: "data-analyzer"
+          input: "${raw_data}"
+          output: "insights"
+        
+        - id: "report-generator"
+          input: "${insights}"
+          output: "final_report"
+    ```
+    
+    **Use cases**: Linear processes with strong dependencies
+  </Tab>
+  
+  <Tab title="Parallel">
+    Multiple agents execute simultaneously.
+    
+    ```yaml
+    orchestration:
+      mode: "parallel"
+      agents:
+        - id: "sentiment-analyzer"
+        - id: "keyword-extractor"
+        - id: "entity-recognition"
+      
+      aggregation:
+        agent: "result-merger"
+        strategy: "combine_all"
+    ```
+    
+    **Use cases**: Independent analyses, massive processing
+  </Tab>
+  
+  <Tab title="Autonomous (Magentic)">
+    Agents decide coordination themselves.
+    
+    ```yaml
+    orchestration:
+      mode: "autonomous"
+      goal: "Analyze customer satisfaction and propose improvements"
+      
+      available_agents:
+        - "data-fetcher"
+        - "sentiment-analyzer"
+        - "trend-detector"
+        - "recommendation-engine"
+        - "report-writer"
+      
+      constraints:
+        max_iterations: 10
+        budget: 5.0  # credits
+        timeout: 300  # seconds
+    ```
+    
+    **Use cases**: Open problems, creative exploration
+  </Tab>
+</Tabs>
+
+## Roadmap and dates
+
+<Steps>
+  <Step title="Q2 2025: Scalt Factory private beta">
+    Early access to marketplace for early adopters
+    - 50+ ready-to-use agents
+    - Rating and review system
+    - Community contribution
+  </Step>
+  
+  <Step title="Q3 2025: Basic orchestration">
+    Sequential and parallel modes
+    - Visual configuration (drag & drop)
+    - Predefined team templates
+    - Real-time monitoring
+  </Step>
+  
+  <Step title="Q4 2025: Magentic orchestration">
+    Autonomous and intelligent orchestration
+    - Self-organizing agents
+    - Collaborative learning
+    - Continuous optimization
+  </Step>
+  
+  <Step title="2026: Factory Pro & Advanced Orchestration">
+    Advanced features
+    - Public marketplace with monetization
+    - Multi-cloud orchestration
+    - Agents with long-term memory
+  </Step>
+</Steps>
+
+## Join the beta
+
+<Card
+  title="Private beta registration"
+  icon="rocket"
+  href="https://scalt.ai"
+  horizontal
+>
+  Be among the first to test these revolutionary features. Sign up now!
+</Card>
+
+### Early adopter benefits
+
+<CardGroup cols={3}>
+  <Card title="Early access" icon="key">
+    Test before everyone else
+  </Card>
+  <Card title="Preferential rate" icon="tag">
+    50% lifetime discount
+  </Card>
+  <Card title="Influence" icon="comments">
+    Participate in development
+  </Card>
+  <Card title="Priority support" icon="headset">
+    Dedicated assistance
+  </Card>
+  <Card title="Free training" icon="graduation-cap">
+    Exclusive sessions
+  </Card>
+  <Card title="Community" icon="users">
+    Expert network
+  </Card>
+</CardGroup>
+
+## Stay informed
+
+<Tabs>
+  <Tab title="Newsletter">
+    Subscribe to our newsletter to receive updates:
+    - New features
+    - Release dates
+    - Use cases and tutorials
+    - Community events
+  </Tab>
+  
+  <Tab title="Blog">
+    Follow our [blog](https://scalt.ai/blog) for:
+    - Detailed technical articles
+    - Customer success stories
+    - Best practices
+    - Product announcements
+  </Tab>
+  
+  <Tab title="Social networks">
+    Join us on:
+    - [LinkedIn](https://linkedin.com/company/scaltai)
+    - [Twitter / X](https://x.com/scalt_ai)
+    - [Discord](https://discord.gg/scalt)
+  </Tab>
+</Tabs>
+
+## Your suggestions matter!
+
+Have feature ideas? Tell us what would help you most!
+
+<Card
+  title="Suggest a feature"
+  icon="lightbulb"
+  href="https://scalt.ai/feature-request"
+  horizontal
+>
+  Share your ideas and vote for others'. Most popular ones will be prioritized!
+</Card>
+
+---
+
+<Note>
+  **This page will be updated regularly** as development progresses. Bookmark it!
+</Note>
+

@@ -9,41 +9,89 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Documentation",
-        "groups": [
+        "language": "en",
+        "tabs": [
           {
-            "group": "Commencer",
-            "pages": [
-              "index",
-              "quickstart"
+            "tab": "Documentation",
+            "groups": [
+              {
+                "group": "Get Started",
+                "pages": [
+                  "en/index",
+                  "en/quickstart"
+                ]
+              },
+              {
+                "group": "Core Guides",
+                "pages": [
+                  "en/guides/projects",
+                  "en/guides/create-agent",
+                  "en/guides/edit-agent",
+                  "en/guides/run-tasks"
+                ]
+              },
+              {
+                "group": "Coming Soon",
+                "pages": [
+                  "en/guides/coming-soon"
+                ]
+              }
             ]
           },
           {
-            "group": "Guides essentiels",
-            "pages": [
-              "guides/projects",
-              "guides/create-agent",
-              "guides/edit-agent",
-              "guides/run-tasks"
-            ]
-          },
-          {
-            "group": "À venir",
-            "pages": [
-              "guides/coming-soon"
+            "tab": "API Reference (Coming Soon)",
+            "groups": [
+              {
+                "group": "Coming Soon",
+                "pages": [
+                  "en/api-reference/introduction"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "API Reference (Bientôt disponible)",
-        "groups": [
+        "language": "fr",
+        "tabs": [
           {
-            "group": "À venir",
-            "pages": [
-              "api-reference/introduction"
+            "tab": "Documentation",
+            "groups": [
+              {
+                "group": "Commencer",
+                "pages": [
+                  "fr/index",
+                  "fr/quickstart"
+                ]
+              },
+              {
+                "group": "Guides essentiels",
+                "pages": [
+                  "fr/guides/projects",
+                  "fr/guides/create-agent",
+                  "fr/guides/edit-agent",
+                  "fr/guides/run-tasks"
+                ]
+              },
+              {
+                "group": "À venir",
+                "pages": [
+                  "fr/guides/coming-soon"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API Reference (Bientôt disponible)",
+            "groups": [
+              {
+                "group": "À venir",
+                "pages": [
+                  "fr/api-reference/introduction"
+                ]
+              }
             ]
           }
         ]
@@ -52,7 +100,7 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Site web",
+          "anchor": "Website",
           "href": "https://scalt.ai",
           "icon": "globe"
         },

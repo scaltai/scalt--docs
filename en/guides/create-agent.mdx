@@ -1,0 +1,218 @@
+---
+title: "Create an agent with Scalt Assistant"
+description: "Create intelligent agents simply with a prompt"
+icon: "wand-magic-sparkles"
+---
+
+## Introduction
+
+The **Scalt Assistant** is your copilot for creating intelligent agents. Rather than manually configuring each parameter, you simply describe what you want to automate, and the Assistant generates the agent for you.
+
+<Info>
+  **Simple as a conversation. Powerful as code.**
+</Info>
+
+## How does Scalt Assistant work?
+
+Scalt Assistant uses artificial intelligence to:
+
+1. **Understand** your need expressed in natural language
+2. **Analyze** available tools and integrations
+3. **Generate** the optimal agent configuration
+4. **Suggest** improvements and optimizations
+
+## Access Scalt Assistant
+
+<Steps>
+  <Step title="Open your project">
+    Select the project where you want to create the agent
+  </Step>
+  <Step title="Launch the Assistant">
+    Click **"Create an agent"** then select **"Scalt Assistant"**
+  </Step>
+  <Step title="Start the conversation">
+    The Assistant interface opens, ready to receive your instructions
+  </Step>
+</Steps>
+
+## Write a good prompt
+
+### Basic principles
+
+A good prompt for Scalt Assistant should be:
+
+<CardGroup cols={2}>
+  <Card title="Clear" icon="lightbulb">
+    Clearly express the agent's objective
+  </Card>
+  <Card title="Specific" icon="bullseye">
+    Specify the actions to perform
+  </Card>
+  <Card title="Contextual" icon="book">
+    Give the necessary business context
+  </Card>
+  <Card title="Complete" icon="list-check">
+    Include triggers and expected results
+  </Card>
+</CardGroup>
+
+### Recommended structure
+
+Use this structure for better results:
+
+```text
+[OBJECTIVE]: What should the agent do?
+[TRIGGER]: When should it act?
+[ACTIONS]: What steps should it follow?
+[RESULT]: What is the expected deliverable?
+```
+
+## Prompt examples
+
+### Example 1: Customer support agent
+
+<CodeGroup>
+
+```text Basic prompt
+Create an agent that responds to customer support emails
+```
+
+```text Optimized prompt
+OBJECTIVE: Automate responses to customer support requests
+
+TRIGGER: Every time an email arrives at support@company.com
+
+ACTIONS:
+1. Analyze email content
+2. Identify request type (technical, billing, other)
+3. Search our knowledge base
+4. Generate appropriate response
+5. If request is complex, create ticket and alert team
+
+RESULT: 
+- Response email sent to customer
+- Ticket created in Zendesk if necessary
+- Slack notification for urgent cases
+```
+
+</CodeGroup>
+
+<Tip>
+  The more detailed your prompt, the more accurate and effective the generated agent will be.
+</Tip>
+
+## Refine your agent with the Assistant
+
+Scalt Assistant is conversational. You can refine your agent through multiple exchanges:
+
+<Steps>
+  <Step title="Initial prompt">
+    Describe your general need
+  </Step>
+  <Step title="Assistant proposes">
+    It generates a first version of the agent
+  </Step>
+  <Step title="You refine">
+    "Also add spam verification"
+    "Use GPT-4 model instead of Claude"
+    "Send notifications to Teams rather than Slack"
+  </Step>
+  <Step title="Iteration">
+    Assistant adjusts the configuration
+  </Step>
+  <Step title="Validation">
+    Once satisfied, validate creation
+  </Step>
+</Steps>
+
+## Test your agent
+
+Once created, immediately test your agent:
+
+<Steps>
+  <Step title="Access the Playground">
+    Assistant automatically redirects you to the Playground
+  </Step>
+  <Step title="Simulate scenarios">
+    Test with real data or examples
+  </Step>
+  <Step title="Check results">
+    Review actions performed and results
+  </Step>
+  <Step title="Adjust if needed">
+    Return to Assistant for modifications
+  </Step>
+</Steps>
+
+<Tip>
+  The Playground uses an isolated environment. Actions are not actually executed (emails not sent, data not modified).
+</Tip>
+
+## Popular use cases
+
+Get inspired by these examples:
+
+<AccordionGroup>
+  <Accordion icon="envelope" title="Automated email">
+    "Create an agent that sends a personalized welcome email to each new customer with advice based on their profile"
+  </Accordion>
+  
+  <Accordion icon="magnifying-glass" title="Competitive intelligence">
+    "Create an agent that monitors competitors' prices on their website every day and alerts me if they lower their prices"
+  </Accordion>
+  
+  <Accordion icon="user-plus" title="Customer onboarding">
+    "Create an agent that automates onboarding: creates accounts, sends access credentials, schedules a demo and adds to CRM"
+  </Accordion>
+  
+  <Accordion icon="file-invoice-dollar" title="Automatic billing">
+    "Create an agent that generates and sends invoices on the 1st of the month, follows up on unpaid ones after 15 days, and updates accounting"
+  </Accordion>
+</AccordionGroup>
+
+## Limitations and considerations
+
+<Warning>
+  **Points of attention**:
+  
+  - Assistant generates a base configuration. For very complex needs, manual editing may be necessary.
+  - Always verify permissions and access to third-party tools.
+  - Test thoroughly before deploying to production.
+  - Agents generate costs (Scalt credits + third-party APIs).
+</Warning>
+
+## Best practices
+
+<CardGroup cols={2}>
+  <Card title="Start simple" icon="seedling">
+    Create a basic version then enrich progressively
+  </Card>
+  <Card title="Test regularly" icon="flask">
+    Verify each addition before complexifying
+  </Card>
+  <Card title="Document" icon="book">
+    Add comments for you and your team
+  </Card>
+  <Card title="Monitor" icon="chart-line">
+    Check performance and costs regularly
+  </Card>
+</CardGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Edit your agent"
+    icon="pen-to-square"
+    href="/en/guides/edit-agent"
+  >
+    Customize and optimize your agent
+  </Card>
+  <Card
+    title="Run tasks"
+    icon="play"
+    href="/en/guides/run-tasks"
+  >
+    Execute and schedule your automations
+  </Card>
+</CardGroup>

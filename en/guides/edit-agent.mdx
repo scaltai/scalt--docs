@@ -1,0 +1,211 @@
+---
+title: "Edit an agent"
+description: "Customize and optimize your existing agents"
+icon: "pen-to-square"
+---
+
+## Introduction
+
+Once your agent is created, you can customize it extensively to perfectly fit your needs. Scalt offers two editing modes:
+
+<CardGroup cols={2}>
+  <Card title="Conversational Mode" icon="comments">
+    Use Scalt Assistant to modify your agent in natural language
+  </Card>
+  <Card title="Advanced Mode" icon="code">
+    Directly edit the configuration for total control
+  </Card>
+</CardGroup>
+
+## Access agent editing
+
+<Steps>
+  <Step title="Open your project">
+    Select the project containing the agent to edit
+  </Step>
+  <Step title="Select the agent">
+    Click on the agent in the list
+  </Step>
+  <Step title="Start editing">
+    Click **"Edit"** in the top right
+  </Step>
+</Steps>
+
+## Conversational Mode
+
+The simplest way to make modifications.
+
+### Modify with Scalt Assistant
+
+<Steps>
+  <Step title="Open the Assistant">
+    Click **"Edit with Assistant"**
+  </Step>
+  <Step title="Describe the changes">
+    Simply explain what you want to modify
+  </Step>
+  <Step title="Assistant applies">
+    Changes are automatically applied
+  </Step>
+  <Step title="Test">
+    Verify that changes meet your expectations
+  </Step>
+</Steps>
+
+### Examples of conversational modifications
+
+```text Request examples
+
+"Add verification to ignore spam emails"
+
+"Change AI model from GPT-3.5 to GPT-4"
+
+"Also send a notification to Teams in addition to Slack"
+
+"Increase timeout to 5 minutes instead of 2"
+
+"Add a step to verify budget before executing"
+
+"Filter only customers with revenue > $50K"
+
+"Schedule execution every day at 8am instead of 9am"
+```
+
+## Advanced Mode
+
+For technical users who want total control.
+
+### Agent configuration
+
+<Tabs>
+  <Tab title="General information">
+    <ParamField path="name" type="string" required>
+      Agent name (unique within project)
+    </ParamField>
+    
+    <ParamField path="description" type="string">
+      Detailed description of agent's objective
+    </ParamField>
+    
+    <ParamField path="version" type="string">
+      Agent version (use semantic versioning)
+    </ParamField>
+    
+    <ParamField path="tags" type="array">
+      Tags to organize your agents
+    </ParamField>
+  </Tab>
+  
+  <Tab title="AI Model">
+    <ParamField path="model" type="string" required>
+      AI model to use
+      - `gpt-4`: Most performant, more expensive
+      - `gpt-3.5-turbo`: Good value
+      - `claude-3-opus`: Excellent for complex tasks
+      - `claude-3-sonnet`: Balanced
+      - `mistral-large`: Fast and economical
+    </ParamField>
+    
+    <ParamField path="temperature" type="number" default="0.7">
+      Response creativity (0.0 to 1.0)
+      - `0.0`: Deterministic, precise
+      - `0.7`: Balanced (recommended)
+      - `1.0`: Very creative
+    </ParamField>
+    
+    <ParamField path="max_tokens" type="number" default="2000">
+      Maximum response length
+    </ParamField>
+  </Tab>
+</Tabs>
+
+## Tools and integrations
+
+### Add an integration
+
+<Steps>
+  <Step title="Access integrations">
+    In the editor, click **"Tools"**
+  </Step>
+  <Step title="Browse catalog">
+    Search for the tool you want to add
+  </Step>
+  <Step title="Configure authentication">
+    Enter credentials (API key, OAuth, etc.)
+  </Step>
+  <Step title="Test connection">
+    Verify that authentication works
+  </Step>
+  <Step title="Use in workflow">
+    Tool is now available for your agent
+  </Step>
+</Steps>
+
+## Test your modifications
+
+<Warning>
+  **Important**: Always test in the Playground before deploying to production!
+</Warning>
+
+<Steps>
+  <Step title="Save your modifications">
+    Click **"Save"**
+  </Step>
+  <Step title="Open the Playground">
+    Click **"Test"**
+  </Step>
+  <Step title="Run test scenarios">
+    Test different use cases, including edge cases
+  </Step>
+  <Step title="Check logs">
+    Examine steps, API calls and results
+  </Step>
+  <Step title="Validate or adjust">
+    If everything works, deploy. Otherwise, adjust and retest.
+  </Step>
+</Steps>
+
+## Deploy modifications
+
+Once satisfied with your tests:
+
+<Tabs>
+  <Tab title="Immediate deployment">
+    1. Click **"Deploy"**
+    2. Confirm production deployment
+    3. Agent now uses the new version
+  </Tab>
+  
+  <Tab title="Scheduled deployment">
+    1. Click **"Schedule deployment"**
+    2. Choose date and time
+    3. Deployment will happen automatically at chosen time
+  </Tab>
+  
+  <Tab title="Progressive deployment">
+    1. Enable progressive deployment (Canary)
+    2. 10% of traffic to new version
+    3. If metrics are good, progressively increase
+    4. Automatic rollback if errors detected
+  </Tab>
+</Tabs>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Run tasks"
+    icon="play"
+    href="/en/guides/run-tasks"
+  >
+    Execute and schedule your agents
+  </Card>
+  <Card
+    title="Monitor performance"
+    icon="chart-line"
+    href="/en/guides/monitoring"
+  >
+    Analyze metrics and optimize
+  </Card>
+</CardGroup>
+
