@@ -26,9 +26,9 @@ Projects in Scalt allow you to organize your agents, automations, and resources 
   <Step title="Fill in the information">
     - **Name**: A descriptive name (e.g., "Marketing Automation")
     - **Description**: Explain the project's objective
-    - **Icon**: Choose an icon to quickly identify the project
+    - **Tags**: Add tags
   </Step>
-  <Step title="Configure settings">
+  <Step title="Configure settings (Enterprise)">
     - **Visibility**: Private or shared with your organization
     - **Members**: Invite collaborators
     - **Permissions**: Define access rights
@@ -42,9 +42,6 @@ A Scalt project contains several elements:
 <CardGroup cols={2}>
   <Card title="Agents" icon="robot">
     All agents (Scalters) created in this project
-  </Card>
-  <Card title="Tools & Integrations" icon="plug">
-    Connections to configured APIs and MCP tools
   </Card>
   <Card title="Knowledge base" icon="book">
     Documents and files shared between agents
@@ -60,7 +57,7 @@ A Scalt project contains several elements:
   </Card>
 </CardGroup>
 
-## Manage project members
+## Manage project members (Enterprise)
 
 ### Invite collaborators
 
@@ -119,12 +116,6 @@ Recommended tags:
 - By frequency: "real-time", "daily", "weekly"
 ```
 
-### Create folders
-
-<Tip>
-  Use folders to group related agents. For example: "Lead Generation" can contain multiple agents working together.
-</Tip>
-
 ## Share resources between agents
 
 ### Shared knowledge base
@@ -147,11 +138,11 @@ All agents in a project can access the shared knowledge base:
 
 Configure once, use everywhere:
 
-- **MCP Integrations**: Connect Slack, Gmail, CRM once
-- **Custom APIs**: Define your endpoints at project level
+- **Integrations**: Connect Slack, Gmail, CRM once
+- **Custom MCPs**: Define your endpoints at project level
 - **Webhooks**: Receive notifications for all agents
 
-## Monitor project performance
+## Monitor project performance (Enterprise)
 
 ### Analytics dashboard
 
@@ -178,7 +169,7 @@ Access your project's key metrics:
   </Card>
 </CardGroup>
 
-### Alerts and notifications
+### Alerts and notifications (Enterprise)
 
 Configure alerts to stay informed:
 
@@ -196,7 +187,7 @@ Configure alerts to stay informed:
 <AccordionGroup>
   <Accordion icon="sliders" title="Basic settings">
     - Project name and description
-    - Icon and color
+    - Tags
     - Default timezone
     - Agent language
   </Accordion>
@@ -320,4 +311,5 @@ Archiving allows you to keep data while deactivating the project:
     Connect your favorite tools
   </Card>
 </CardGroup>
+
 

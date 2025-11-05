@@ -26,9 +26,9 @@ Les projets dans Scalt vous permettent d'organiser vos agents, automatisations e
   <Step title="Remplissez les informations">
     - **Nom** : Un nom descriptif (ex: "Marketing Automation")
     - **Description** : Expliquez l'objectif du projet
-    - **Icône** : Choisissez une icône pour identifier rapidement le projet
+    - **Tags** : Ajouter des tags
   </Step>
-  <Step title="Configurez les paramètres">
+  <Step title="Configurez les paramètres (Enterprise)">
     - **Visibilité** : Privé ou partagé avec votre organisation
     - **Membres** : Invitez les collaborateurs
     - **Permissions** : Définissez les droits d'accès
@@ -42,9 +42,6 @@ Un projet Scalt contient plusieurs éléments :
 <CardGroup cols={2}>
   <Card title="Agents" icon="robot">
     Tous les agents (Scalters) créés dans ce projet
-  </Card>
-  <Card title="Outils & Intégrations" icon="plug">
-    Les connexions aux APIs et outils MCP configurés
   </Card>
   <Card title="Base de connaissances" icon="book">
     Documents et fichiers partagés entre agents
@@ -60,7 +57,7 @@ Un projet Scalt contient plusieurs éléments :
   </Card>
 </CardGroup>
 
-## Gérer les membres du projet
+## Gérer les membres du projet (Enterprise)
 
 ### Inviter des collaborateurs
 
@@ -119,12 +116,6 @@ Tags recommandés :
 - Par fréquence : "temps-réel", "quotidien", "hebdomadaire"
 ```
 
-### Créer des dossiers
-
-<Tip>
-  Utilisez des dossiers pour regrouper les agents liés. Par exemple : "Génération de leads" peut contenir plusieurs agents travaillant ensemble.
-</Tip>
-
 ## Partager des ressources entre agents
 
 ### Base de connaissances partagée
@@ -147,11 +138,11 @@ Tous les agents d'un projet peuvent accéder à la base de connaissances partag�
 
 Configurez une fois, utilisez partout :
 
-- **Intégrations MCP** : Connectez Slack, Gmail, CRM une seule fois
-- **APIs personnalisées** : Définissez vos endpoints au niveau projet
+- **Intégrations** : Connectez Slack, Gmail, CRM une seule fois
+- **MCP personnalisés** : Définissez vos endpoints au niveau projet
 - **Webhooks** : Recevez des notifications pour tous les agents
 
-## Surveiller les performances du projet
+## Surveiller les performances du projet (Enterprise)
 
 ### Dashboard analytique
 
@@ -178,7 +169,7 @@ Accédez aux métriques clés de votre projet :
   </Card>
 </CardGroup>
 
-### Alertes et notifications
+### Alertes et notifications (Enterprise)
 
 Configurez des alertes pour rester informé :
 
@@ -196,7 +187,7 @@ Configurez des alertes pour rester informé :
 <AccordionGroup>
   <Accordion icon="sliders" title="Paramètres de base">
     - Nom et description du projet
-    - Icône et couleur
+    - Tags
     - Fuseau horaire par défaut
     - Langue des agents
   </Accordion>
@@ -308,14 +299,14 @@ L'archivage permet de conserver les données tout en désactivant le projet :
   <Card
     title="Créer votre premier agent"
     icon="wand-magic-sparkles"
-    href="/guides/create-agent"
+    href="/fr/guides/create-agent"
   >
     Utilisez l'Assistant Scalt pour créer un agent
   </Card>
   <Card
     title="Configurer les intégrations"
     icon="plug"
-    href="/guides/integrations"
+    href="/fr/guides/integrations"
   >
     Connectez vos outils préférés
   </Card>
