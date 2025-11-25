@@ -238,26 +238,27 @@ Pour créer un environnement de test ou déployer dans une autre organisation :
   Les credentials et tokens ne sont jamais copiés pour des raisons de sécurité. Vous devrez les reconfigurer dans le nouveau projet.
 </Warning>
 
-## Archiver ou supprimer un projet
+## Supprimer un projet
 
-### Archiver un projet
+Pour supprimer un projet :
 
-L'archivage permet de conserver les données tout en désactivant le projet :
-
-- Les agents ne s'exécutent plus
-- Les planifications sont suspendues
-- Les données restent accessibles en lecture seule
-- Aucun coût n'est encouru pour un projet archivé
-
-### Supprimer un projet
+<Steps>
+  <Step title="Sélectionnez le projet">
+    Accédez au projet que vous souhaitez supprimer
+  </Step>
+  <Step title="Supprimer">
+    Cliquez sur le menu à 3 points et sélectionnez **"Supprimer le projet"**
+  </Step>
+</Steps>
 
 <Warning>
   **Action irréversible** : La suppression d'un projet entraîne la perte définitive de :
   - Tous les agents
-  - L'historique d'exécution
+  - L'historique des tâches
   - Les logs et métriques
   - La base de connaissances
   
+  Pour éviter une suppression accidentelle, nous vous demandons de supprimer les agents et les outils avant de supprimer votre projet.
   Pensez à exporter vos données importantes avant de supprimer !
 </Warning>
 

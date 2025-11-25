@@ -29,7 +29,10 @@
                   "en/guides/projects",
                   "en/guides/create-agent",
                   "en/guides/edit-agent",
-                  "en/guides/run-tasks"
+                  "en/guides/run-tasks",
+                  "en/guides/scalt-assistant",
+                  "en/guides/scalters-factory",
+                  "en/guides/monitoring"
                 ]
               },
               {
@@ -72,7 +75,9 @@
                   "fr/guides/projects",
                   "fr/guides/create-agent",
                   "fr/guides/edit-agent",
-                  "fr/guides/run-tasks"
+                  "fr/guides/run-tasks",
+                  "fr/guides/scalt-assistant",
+                  "fr/guides/scalters-factory"
                 ]
               },
               {

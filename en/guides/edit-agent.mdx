@@ -38,14 +38,14 @@ The simplest way to make modifications.
 ### Modify with Scalt Assistant
 
 <Steps>
-  <Step title="Open the Assistant">
-    Click **"Edit with Assistant"**
+  <Step title="Open the Agents page">
+    Click on 3 dots menu and select **"Edit with Assistant"**
   </Step>
   <Step title="Describe the changes">
-    Simply explain what you want to modify
+    On Assistant page, simply explain what you want to modify
   </Step>
   <Step title="Assistant applies">
-    Changes are automatically applied
+    Assistant will generate the new configuration
   </Step>
   <Step title="Test">
     Verify that changes meet your expectations
@@ -58,7 +58,7 @@ The simplest way to make modifications.
 
 "Add verification to ignore spam emails"
 
-"Change AI model from GPT-3.5 to GPT-4"
+"Change AI model from GPT-4o to GPT-4.1"
 
 "Also send a notification to Teams in addition to Slack"
 
@@ -68,7 +68,6 @@ The simplest way to make modifications.
 
 "Filter only customers with revenue > $50K"
 
-"Schedule execution every day at 8am instead of 9am"
 ```
 
 ## Advanced Mode
@@ -87,10 +86,6 @@ For technical users who want total control.
       Detailed description of agent's objective
     </ParamField>
     
-    <ParamField path="version" type="string">
-      Agent version (use semantic versioning)
-    </ParamField>
-    
     <ParamField path="tags" type="array">
       Tags to organize your agents
     </ParamField>
@@ -99,11 +94,11 @@ For technical users who want total control.
   <Tab title="AI Model">
     <ParamField path="model" type="string" required>
       AI model to use
-      - `gpt-4`: Most performant, more expensive
-      - `gpt-3.5-turbo`: Good value
-      - `claude-3-opus`: Excellent for complex tasks
-      - `claude-3-sonnet`: Balanced
-      - `mistral-large`: Fast and economical
+      - `gpt-5-mini`: Fast and economical
+      - `gpt-5-chat`: Conversational and fast
+      - `gpt-5-nano`: Use for simple tasks
+      - `gpt-4.1`: Most performant, more expensive
+      - `gpt-4o`: Good value
     </ParamField>
     
     <ParamField path="temperature" type="number" default="0.7">
@@ -111,10 +106,6 @@ For technical users who want total control.
       - `0.0`: Deterministic, precise
       - `0.7`: Balanced (recommended)
       - `1.0`: Very creative
-    </ParamField>
-    
-    <ParamField path="max_tokens" type="number" default="2000">
-      Maximum response length
     </ParamField>
   </Tab>
 </Tabs>
@@ -151,14 +142,8 @@ For technical users who want total control.
   <Step title="Save your modifications">
     Click **"Save"**
   </Step>
-  <Step title="Open the Playground">
-    Click **"Test"**
-  </Step>
   <Step title="Run test scenarios">
     Test different use cases, including edge cases
-  </Step>
-  <Step title="Check logs">
-    Examine steps, API calls and results
   </Step>
   <Step title="Validate or adjust">
     If everything works, deploy. Otherwise, adjust and retest.
@@ -176,17 +161,10 @@ Once satisfied with your tests:
     3. Agent now uses the new version
   </Tab>
   
-  <Tab title="Scheduled deployment">
+  <Tab title="Scheduled deployment (coming soon)">
     1. Click **"Schedule deployment"**
     2. Choose date and time
     3. Deployment will happen automatically at chosen time
-  </Tab>
-  
-  <Tab title="Progressive deployment">
-    1. Enable progressive deployment (Canary)
-    2. 10% of traffic to new version
-    3. If metrics are good, progressively increase
-    4. Automatic rollback if errors detected
   </Tab>
 </Tabs>
 

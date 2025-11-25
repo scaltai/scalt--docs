@@ -21,29 +21,30 @@ Une fois votre agent configuré et testé, vous pouvez l'exécuter de deux mani�
 
 ### Lancer une tâche manuellement
 
+Dans la page des tâches, invoquez vos agents en utilisant le symbole "@" pour sélectionner l'agent que vous souhaitez exécuter.
+
+Comment tester votre Agent
+
 <Steps>
   <Step title="Sélectionnez votre agent">
-    Dans votre projet, cliquez sur l'agent à exécuter
-  </Step>
-  <Step title="Cliquez sur Exécuter">
-    Bouton **"Exécuter maintenant"** en haut à droite
+    Dans la page des tâches, sélectionnez l'agent que vous souhaitez exécuter @nom_agent
   </Step>
   <Step title="Fournissez les paramètres">
     Si l'agent nécessite des données d'entrée, remplissez le formulaire
   </Step>
   <Step title="Lancez l'exécution">
-    Confirmez pour démarrer la tâche
+    Cliquez sur "Exécuter" pour démarrer la tâche
   </Step>
 </Steps>
 
-## Orchestration d'agents (Magentic)
+## Orchestration d'agents
 
 ### Qu'est-ce que l'orchestration d'agents ?
 
 L'**orchestration d'agents** vous permet de créer des **équipes d'agents** qui collaborent pour accomplir des tâches complexes. Chaque agent a son rôle spécialisé, et ensemble ils forment un système intelligent et coordonné.
 
 <Info>
-  **Powered by Magentic** : Nous utilisons le framework Magentic pour l'orchestration multi-agents, permettant une coordination intelligente et autonome.
+  **@analyst** lis ce document et donne un court résumé **@planner** utilise le résumé pour planifier les prochaines étapes
 </Info>
 
 ### Pourquoi l'orchestration ?
@@ -573,75 +574,9 @@ Filtres disponibles :
   </Step>
 </Steps>
 
-## Notifications
+## Notifications (bientôt disponible)
 
 Restez informé des exécutions de vos agents.
-
-### Configurer les notifications
-
-<Tabs>
-  <Tab title="Email">
-    ```yaml
-    notifications:
-      email:
-        enabled: true
-        recipients: ["admin@entreprise.com", "equipe@entreprise.com"]
-        events:
-          - on_failure
-          - on_success_if_critical
-        include_logs: true
-        include_results: true
-    ```
-  </Tab>
-  
-  <Tab title="Slack">
-    ```yaml
-    notifications:
-      slack:
-        enabled: true
-        webhook_url: "${secrets.SLACK_WEBHOOK}"
-        channel: "#notifications"
-        events:
-          - on_start
-          - on_success
-          - on_failure
-        mentions:
-          on_failure: ["@admin", "@devops"]
-    ```
-  </Tab>
-  
-  <Tab title="Microsoft Teams">
-    ```yaml
-    notifications:
-      teams:
-        enabled: true
-        webhook_url: "${secrets.TEAMS_WEBHOOK}"
-        events:
-          - on_failure
-        adaptive_card: true
-    ```
-  </Tab>
-  
-  <Tab title="Webhook personnalisé">
-    ```yaml
-    notifications:
-      webhook:
-        enabled: true
-        url: "https://api.monentreprise.com/notifications"
-        method: "POST"
-        headers:
-          Authorization: "Bearer ${secrets.NOTIF_TOKEN}"
-        events:
-          - on_success
-          - on_failure
-        payload:
-          agent_id: "${agent.id}"
-          execution_id: "${execution.id}"
-          status: "${execution.status}"
-          duration: "${execution.duration}"
-    ```
-  </Tab>
-</Tabs>
 
 ### Événements de notification
 

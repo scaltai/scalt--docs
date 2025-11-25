@@ -23,7 +23,7 @@ Projects allow you to organize your agents and automations by business domain.
     Click **"New project"** and give it a descriptive name (e.g., "Marketing Automation" or "Customer Support")
   </Step>
   <Step title="Configure settings">
-    Set basic parameters: name, description, and invite team members if needed
+    Set basic parameters: name, description, and tags
   </Step>
 </Steps>
 
@@ -37,7 +37,7 @@ Scalt Assistant allows you to create agents simply by describing what you want t
 
 <Steps>
   <Step title="Open Scalt Assistant">
-    In your project, click **"Create an agent"** then select **"Scalt Assistant"**
+    In your project, click **"Assistant"** tab in the left sidebar
   </Step>
   <Step title="Describe your need">
     Simply express what you want to automate, for example:
@@ -50,8 +50,9 @@ Scalt Assistant allows you to create agents simply by describing what you want t
   <Step title="Assistant generates your agent">
     Scalt Assistant analyzes your request and automatically generates:
     - The agent configuration
-    - The necessary tools
-    - The execution workflow
+    - Ask you to add the necessary tools
+    - Ask you to add the necessary documents
+    - Ask you to add the necessary instructions
   </Step>
 </Steps>
 
@@ -78,23 +79,20 @@ Once your agent is created, customize it according to your needs.
 <AccordionGroup>
   <Accordion icon="plug" title="Connect your tools">
     Add necessary integrations:
-    - **MCP Tools**: Connect your favorite applications
-    - **APIs**: Integrate your custom APIs
-    - **Documents**: Upload knowledge files for your agent
+    - **Tools**: Connect your favorite applications
+    - **APIs**: Integrate your custom APIs by adding a MCP connector
   </Accordion>
   
   <Accordion icon="sliders" title="Adjust settings">
     Customize your agent's behavior:
     - **AI Model**: Choose between GPT-4, Claude, Mistral...
     - **Temperature**: Adjust response creativity
-    - **Timeout**: Define maximum execution duration
   </Accordion>
   
   <Accordion icon="book" title="Enrich the knowledge base">
     Give context to your agent:
-    - Upload PDF, Word, Excel documents
-    - Add links to your documentation
-    - Define specific instructions
+    - **Instructions**: Define specific instructions for your agent
+    - **Documents**: Upload knowledge files for your agent (PDF, Word, Excel)
   </Accordion>
 </AccordionGroup>
 
@@ -103,14 +101,11 @@ Once your agent is created, customize it according to your needs.
 Before deploying, test your agent in a secure environment.
 
 <Steps>
-  <Step title="Open the Playground">
-    Click **"Test"** to access the Playground
-  </Step>
   <Step title="Simulate scenarios">
     Test different use cases to verify your agent's behavior
   </Step>
   <Step title="Analyze results">
-    Examine logs, tool calls, and generated responses
+    Examine tool calls, and generated responses
   </Step>
   <Step title="Iterate if necessary">
     Adjust the configuration until you get the desired behavior
@@ -135,17 +130,14 @@ Once satisfied with testing, deploy your agent.
     4. Check results once completed
   </Tab>
   
-  <Tab title="Scheduling">
+  <Tab title="Scheduled execution">
     To schedule recurring execution:
     
     1. Click **"Schedule"**
-    2. Choose frequency (daily, weekly, monthly, or custom cron)
-    3. Set execution time
-    4. Enable scheduling
-    
-    <Tip>
-      Use cron syntax for complex schedules (e.g., `0 9 * * 1-5` for weekdays at 9am)
-    </Tip>
+    2. Define a task name and task instructions
+    3. Choose frequency (daily, weekly, monthly)
+    4. Set start time
+    5. Enable scheduling
   </Tab>
 </Tabs>
 

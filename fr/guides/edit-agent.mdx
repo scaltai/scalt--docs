@@ -38,14 +38,14 @@ Le mode le plus simple pour apporter des modifications.
 ### Modifier avec l'Assistant Scalt
 
 <Steps>
-  <Step title="Ouvrez l'Assistant">
-    Cliquez sur **"Éditer avec l'Assistant"**
+  <Step title="Ouvrez la page Agents">
+    Cliquez sur le menu à 3 points et sélectionnez **"Éditer avec l'Assistant"**
   </Step>
   <Step title="Décrivez les changements">
-    Expliquez simplement ce que vous voulez modifier
+    Sur la page de l'Assistant, expliquez simplement ce que vous voulez modifier
   </Step>
   <Step title="L'Assistant applique">
-    Les modifications sont appliquées automatiquement
+    L'Assistant générera la nouvelle configuration
   </Step>
   <Step title="Testez">
     Vérifiez que les changements correspondent à vos attentes
@@ -58,7 +58,7 @@ Le mode le plus simple pour apporter des modifications.
 
 "Ajoute une vérification pour ignorer les emails de spam"
 
-"Change le modèle IA de GPT-3.5 vers GPT-4"
+"Change le modèle IA de GPT-4o vers GPT-4.1"
 
 "Envoie aussi une notification sur Teams en plus de Slack"
 
@@ -68,7 +68,6 @@ Le mode le plus simple pour apporter des modifications.
 
 "Filtre uniquement les clients avec un CA > 50K€"
 
-"Programme l'exécution tous les jours à 8h au lieu de 9h"
 ```
 
 ## Mode Avancé
@@ -87,10 +86,6 @@ Pour les utilisateurs techniques qui souhaitent un contrôle total.
       Description détaillée de l'objectif de l'agent
     </ParamField>
     
-    <ParamField path="version" type="string">
-      Version de l'agent (utilisez le versioning sémantique)
-    </ParamField>
-    
     <ParamField path="tags" type="array">
       Tags pour organiser vos agents
     </ParamField>
@@ -99,11 +94,11 @@ Pour les utilisateurs techniques qui souhaitent un contrôle total.
   <Tab title="Modèle IA">
     <ParamField path="model" type="string" required>
       Modèle IA à utiliser
-      - `gpt-4` : Le plus performant, plus coûteux
-      - `gpt-3.5-turbo` : Bon rapport qualité/prix
-      - `claude-3-opus` : Excellent pour les tâches complexes
-      - `claude-3-sonnet` : Équilibré
-      - `mistral-large` : Rapide et économique
+      - `gpt-5-mini` : Rapide et économique
+      - `gpt-5-chat` : Conversationnel et rapide
+      - `gpt-5-nano` : Utiliser pour des tâches simples
+      - `gpt-4.1` : Le plus performant, plus coûteux
+      - `gpt-4o` : Bon rapport qualité/prix
     </ParamField>
     
     <ParamField path="temperature" type="number" default="0.7">
@@ -112,226 +107,8 @@ Pour les utilisateurs techniques qui souhaitent un contrôle total.
       - `0.7` : Équilibré (recommandé)
       - `1.0` : Très créatif
     </ParamField>
-    
-    <ParamField path="max_tokens" type="number" default="2000">
-      Longueur maximale de la réponse
-    </ParamField>
-  </Tab>
-  
-  <Tab title="Instructions système">
-    ```yaml Exemple de configuration
-    system_instructions: |
-      Tu es un assistant spécialisé en support client.
-      
-      Ton rôle :
-      - Analyser les demandes clients
-      - Fournir des réponses précises et professionnelles
-      - Escalader les cas complexes à l'équipe humaine
-      
-      Règles à respecter :
-      - Toujours rester courtois et professionnel
-      - Ne jamais inventer d'informations
-      - Citer les sources de la base de connaissances
-      - Demander des clarifications si la demande est ambiguë
-      
-      Format de réponse :
-      - Être concis mais complet
-      - Utiliser des puces pour les listes
-      - Proposer des solutions alternatives si possible
-    ```
-  </Tab>
-  
-  <Tab title="Paramètres d'exécution">
-    <ParamField path="timeout" type="number" default="120">
-      Timeout en secondes (max: 300)
-    </ParamField>
-    
-    <ParamField path="retry_policy" type="object">
-      Politique de réessai en cas d'échec
-      ```json
-      {
-        "max_retries": 3,
-        "backoff_strategy": "exponential",
-        "retry_on": ["timeout", "rate_limit", "server_error"]
-      }
-      ```
-    </ParamField>
-    
-    <ParamField path="concurrency" type="number" default="1">
-      Nombre d'exécutions parallèles autorisées
-    </ParamField>
   </Tab>
 </Tabs>
-
-### Workflow et logique
-
-Éditez le workflow de votre agent étape par étape :
-
-<CodeGroup>
-
-```yaml Vue YAML
-workflow:
-  - step: fetch_emails
-    action: email.fetch
-    params:
-      folder: "inbox"
-      unread_only: true
-      max_count: 50
-    output: emails
-    
-  - step: analyze_sentiment
-    action: ai.analyze_sentiment
-    input: ${emails.body}
-    output: sentiment
-    
-  - step: categorize
-    action: ai.classify
-    input: ${emails.subject}
-    categories: ["support", "sales", "billing", "other"]
-    output: category
-    
-  - step: conditional_response
-    action: conditional
-    conditions:
-      - if: ${sentiment.score} < 0.3
-        then:
-          - action: slack.notify
-            channel: "#urgent-support"
-            message: "Email négatif reçu : ${emails.subject}"
-          - action: ticket.create
-            priority: "high"
-      - if: ${category} == "sales"
-        then:
-          - action: crm.create_lead
-            data: ${emails}
-      - else:
-          - action: email.reply
-            template: "standard_response"
-```
-
-```json Vue JSON
-{
-  "workflow": [
-    {
-      "step": "fetch_emails",
-      "action": "email.fetch",
-      "params": {
-        "folder": "inbox",
-        "unread_only": true,
-        "max_count": 50
-      },
-      "output": "emails"
-    },
-    {
-      "step": "analyze_sentiment",
-      "action": "ai.analyze_sentiment",
-      "input": "${emails.body}",
-      "output": "sentiment"
-    },
-    {
-      "step": "categorize",
-      "action": "ai.classify",
-      "input": "${emails.subject}",
-      "categories": ["support", "sales", "billing", "other"],
-      "output": "category"
-    },
-    {
-      "step": "conditional_response",
-      "action": "conditional",
-      "conditions": [
-        {
-          "if": "${sentiment.score} < 0.3",
-          "then": [
-            {
-              "action": "slack.notify",
-              "channel": "#urgent-support",
-              "message": "Email négatif reçu : ${emails.subject}"
-            },
-            {
-              "action": "ticket.create",
-              "priority": "high"
-            }
-          ]
-        },
-        {
-          "if": "${category} == 'sales'",
-          "then": [
-            {
-              "action": "crm.create_lead",
-              "data": "${emails}"
-            }
-          ]
-        },
-        {
-          "else": [
-            {
-              "action": "email.reply",
-              "template": "standard_response"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-```
-
-</CodeGroup>
-
-### Variables et contexte
-
-Gérez les variables utilisées par votre agent :
-
-<AccordionGroup>
-  <Accordion icon="input" title="Variables d'entrée">
-    Variables fournies lors de l'exécution
-    ```yaml
-    inputs:
-      - name: customer_email
-        type: string
-        required: true
-        description: "Email du client"
-      
-      - name: order_id
-        type: string
-        required: false
-        description: "ID de commande (optionnel)"
-      
-      - name: priority
-        type: enum
-        values: ["low", "medium", "high"]
-        default: "medium"
-    ```
-  </Accordion>
-  
-  <Accordion icon="database" title="Variables d'environnement">
-    Credentials et secrets (jamais exposés dans les logs)
-    ```yaml
-    env_variables:
-      SLACK_WEBHOOK_URL: "${secrets.SLACK_WEBHOOK}"
-      API_KEY: "${secrets.EXTERNAL_API_KEY}"
-      DATABASE_URL: "${secrets.DB_CONNECTION}"
-    ```
-  </Accordion>
-  
-  <Accordion icon="output" title="Variables de sortie">
-    Résultats produits par l'agent
-    ```yaml
-    outputs:
-      - name: tickets_created
-        type: array
-        description: "Liste des tickets créés"
-      
-      - name: execution_time
-        type: number
-        description: "Durée d'exécution en secondes"
-      
-      - name: status
-        type: string
-        description: "Statut final (success, partial, failed)"
-    ```
-  </Accordion>
-</AccordionGroup>
 
 ## Outils et intégrations
 
@@ -355,302 +132,6 @@ Gérez les variables utilisées par votre agent :
   </Step>
 </Steps>
 
-### Outils MCP disponibles
-
-<Tabs>
-  <Tab title="Communication">
-    - **Slack** : Envoyer des messages, créer des channels
-    - **Microsoft Teams** : Notifications et conversations
-    - **Discord** : Messagerie communautaire
-    - **Twilio** : SMS et appels téléphoniques
-    - **SendGrid** : Emails transactionnels
-  </Tab>
-  
-  <Tab title="Productivité">
-    - **Google Workspace** : Gmail, Calendar, Drive, Sheets
-    - **Microsoft 365** : Outlook, OneDrive, Excel
-    - **Notion** : Gestion de contenu
-    - **Airtable** : Bases de données
-    - **Trello / Asana / Jira** : Gestion de projet
-  </Tab>
-  
-  <Tab title="CRM & Ventes">
-    - **Salesforce** : CRM complet
-    - **HubSpot** : Marketing et ventes
-    - **Pipedrive** : Pipeline de ventes
-    - **Stripe** : Paiements
-    - **Shopify** : E-commerce
-  </Tab>
-  
-  <Tab title="Développement">
-    - **GitHub** : Code repos et CI/CD
-    - **GitLab** : DevOps
-    - **Jira** : Issue tracking
-    - **Datadog** : Monitoring
-    - **Sentry** : Error tracking
-  </Tab>
-</Tabs>
-
-### Connecter une API personnalisée
-
-Pour les APIs non disponibles dans le catalogue :
-
-```yaml Configuration API personnalisée
-custom_api:
-  name: "Mon API Interne"
-  base_url: "https://api.monentreprise.com/v1"
-  authentication:
-    type: "bearer"
-    token: "${secrets.MY_API_TOKEN}"
-  
-  endpoints:
-    - name: "get_customer"
-      method: "GET"
-      path: "/customers/{customer_id}"
-      params:
-        - name: customer_id
-          type: string
-          required: true
-    
-    - name: "create_order"
-      method: "POST"
-      path: "/orders"
-      body:
-        customer_id: "${input.customer_id}"
-        items: "${input.items}"
-        total: "${input.total}"
-      headers:
-        Content-Type: "application/json"
-```
-
-## Base de connaissances
-
-### Ajouter des documents
-
-Enrichissez votre agent avec des connaissances spécifiques :
-
-<Steps>
-  <Step title="Accédez à la base de connaissances">
-    Cliquez sur **"Base de connaissances"** dans l'éditeur
-  </Step>
-  <Step title="Uploadez des fichiers">
-    Formats supportés : PDF, Word, Excel, CSV, TXT, Markdown
-  </Step>
-  <Step title="Indexation automatique">
-    Scalt indexe le contenu pour recherche sémantique
-  </Step>
-  <Step title="Testez les réponses">
-    Vérifiez que l'agent utilise bien les documents
-  </Step>
-</Steps>
-
-<Tip>
-  **Formats recommandés** :
-  - **FAQ** : Markdown ou Word
-  - **Catalogues produits** : Excel ou CSV
-  - **Documentation** : PDF
-  - **Procédures** : Markdown avec structure claire
-</Tip>
-
-### Instructions spécifiques à la base de connaissances
-
-```yaml Configuration de la base de connaissances
-knowledge_base:
-  enabled: true
-  
-  sources:
-    - type: "documents"
-      path: "/knowledge/faq.pdf"
-      priority: "high"
-    
-    - type: "web"
-      urls:
-        - "https://docs.monentreprise.com"
-      crawl_depth: 2
-    
-    - type: "database"
-      connection: "${secrets.KNOWLEDGE_DB}"
-      query: "SELECT * FROM knowledge_articles WHERE active = true"
-  
-  retrieval:
-    method: "semantic_search"
-    max_results: 5
-    relevance_threshold: 0.7
-  
-  instructions: |
-    Utilise TOUJOURS la base de connaissances avant de répondre.
-    Si tu ne trouves pas d'information pertinente, dis-le clairement.
-    Cite toujours la source de l'information (document, page).
-```
-
-## Déclencheurs
-
-Configurez quand et comment votre agent s'exécute.
-
-<Tabs>
-  <Tab title="Programmation (Cron)">
-    Exécution à des intervalles réguliers
-    ```yaml
-    trigger:
-      type: "schedule"
-      cron: "0 9 * * 1-5"  # Tous les jours ouvrés à 9h
-      timezone: "Europe/Paris"
-    ```
-    
-    <Tip>
-      **Exemples de syntaxe cron** :
-      - `0 * * * *` : Toutes les heures
-      - `0 0 * * *` : Tous les jours à minuit
-      - `0 9 * * 1` : Tous les lundis à 9h
-      - `0 0 1 * *` : Le 1er de chaque mois
-    </Tip>
-  </Tab>
-  
-  <Tab title="Webhook">
-    Déclenché par un événement externe
-    ```yaml
-    trigger:
-      type: "webhook"
-      url: "https://app.scalt.ai/webhook/your-agent-id"
-      method: "POST"
-      authentication:
-        type: "bearer"
-        token: "${secrets.WEBHOOK_TOKEN}"
-      validation:
-        signature_header: "X-Signature"
-        secret: "${secrets.WEBHOOK_SECRET}"
-    ```
-  </Tab>
-  
-  <Tab title="Événement MCP">
-    Déclenché par un événement d'une intégration
-    ```yaml
-    trigger:
-      type: "event"
-      source: "slack"
-      event_type: "message_posted"
-      filters:
-        channel: "#support"
-        contains: ["urgent", "bug", "problème"]
-    ```
-  </Tab>
-  
-  <Tab title="Manuel">
-    Exécution sur demande uniquement
-    ```yaml
-    trigger:
-      type: "manual"
-      require_confirmation: true
-      allowed_users: ["admin@entreprise.com"]
-    ```
-  </Tab>
-</Tabs>
-
-## Gestion des erreurs
-
-Configurez comment votre agent gère les erreurs :
-
-```yaml Configuration des erreurs
-error_handling:
-  # Stratégie de réessai
-  retry:
-    enabled: true
-    max_attempts: 3
-    backoff_strategy: "exponential"  # linear, exponential, fixed
-    initial_delay: 1000  # ms
-    max_delay: 30000  # ms
-  
-  # Notifications
-  notifications:
-    on_error:
-      - type: "slack"
-        channel: "#alerts"
-        message: "❌ L'agent ${agent.name} a échoué : ${error.message}"
-    
-    on_retry:
-      - type: "log"
-        level: "warning"
-    
-    on_final_failure:
-      - type: "email"
-        to: ["admin@entreprise.com"]
-        subject: "Agent ${agent.name} : échec définitif"
-  
-  # Comportement de secours
-  fallback:
-    action: "pause_agent"  # pause_agent, continue, rollback
-    alert_humans: true
-```
-
-## Versioning et historique
-
-Scalt garde un historique de toutes les modifications :
-
-<CardGroup cols={2}>
-  <Card title="Versions sauvegardées" icon="clock-rotate-left">
-    Chaque modification crée une nouvelle version
-  </Card>
-  <Card title="Restauration facile" icon="rotate-left">
-    Revenez à une version précédente en un clic
-  </Card>
-  <Card title="Comparaison" icon="code-compare">
-    Comparez les différences entre versions
-  </Card>
-  <Card title="Branches" icon="code-branch">
-    Testez des modifications sans impacter la production
-  </Card>
-</CardGroup>
-
-### Créer une branche de test
-
-```bash Workflow recommandé
-1. Créez une branche "test-nouvelle-fonctionnalité"
-2. Modifiez l'agent dans cette branche
-3. Testez en profondeur dans le Playground
-4. Une fois validé, fusionnez avec la branche "production"
-```
-
-## Optimisation des performances
-
-### Réduire les coûts
-
-<AccordionGroup>
-  <Accordion icon="microchip" title="Choisir le bon modèle">
-    - Utilisez **GPT-3.5-turbo** ou **Mistral** pour des tâches simples
-    - Réservez **GPT-4** et **Claude Opus** aux tâches complexes
-    - Testez plusieurs modèles pour trouver le meilleur rapport qualité/prix
-  </Accordion>
-  
-  <Accordion icon="gauge" title="Optimiser les prompts">
-    - Soyez précis pour éviter les réponses longues inutiles
-    - Limitez `max_tokens` au strict nécessaire
-    - Utilisez des templates pour les réponses répétitives
-  </Accordion>
-  
-  <Accordion icon="database" title="Cache et mémorisation">
-    - Activez le cache pour les résultats fréquents
-    - Stockez les résultats intermédiaires réutilisables
-    - Évitez les appels API redondants
-  </Accordion>
-</AccordionGroup>
-
-### Améliorer la vitesse
-
-<CardGroup cols={2}>
-  <Card title="Parallélisation" icon="network-wired">
-    Exécutez les étapes indépendantes en parallèle
-  </Card>
-  <Card title="Timeout ajusté" icon="stopwatch">
-    Réduisez le timeout pour les opérations rapides
-  </Card>
-  <Card title="Streaming" icon="stream">
-    Activez le streaming pour les longues réponses
-  </Card>
-  <Card title="Rate limiting" icon="gauge-high">
-    Respectez les limites des APIs tierces
-  </Card>
-</CardGroup>
-
 ## Tester vos modifications
 
 <Warning>
@@ -661,14 +142,8 @@ Scalt garde un historique de toutes les modifications :
   <Step title="Sauvegardez vos modifications">
     Cliquez sur **"Sauvegarder"**
   </Step>
-  <Step title="Ouvrez le Playground">
-    Cliquez sur **"Tester"**
-  </Step>
   <Step title="Exécutez des scénarios de test">
     Testez différents cas d'usage, y compris les cas limites
-  </Step>
-  <Step title="Vérifiez les logs">
-    Examinez les étapes, les appels d'API et les résultats
   </Step>
   <Step title="Validez ou ajustez">
     Si tout fonctionne, déployez. Sinon, ajustez et retestez.
@@ -686,17 +161,10 @@ Une fois satisfait de vos tests :
     3. L'agent utilise maintenant la nouvelle version
   </Tab>
   
-  <Tab title="Déploiement programmé">
+  <Tab title="Déploiement programmé (bientôt disponible)">
     1. Cliquez sur **"Programmer le déploiement"**
     2. Choisissez la date et l'heure
     3. Le déploiement se fera automatiquement au moment choisi
-  </Tab>
-  
-  <Tab title="Déploiement progressif">
-    1. Activez le déploiement progressif (Canary)
-    2. 10% du trafic vers la nouvelle version
-    3. Si les métriques sont bonnes, augmentez progressivement
-    4. Rollback automatique si détection d'erreurs
   </Tab>
 </Tabs>
 
@@ -718,4 +186,3 @@ Une fois satisfait de vos tests :
     Analysez les métriques et optimisez
   </Card>
 </CardGroup>
-

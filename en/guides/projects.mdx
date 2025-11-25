@@ -46,7 +46,7 @@ A Scalt project contains several elements:
   <Card title="Knowledge base" icon="book">
     Documents and files shared between agents
   </Card>
-  <Card title="Execution history" icon="clock-rotate-left">
+  <Card title="Tasks history" icon="clock-rotate-left">
     Logs and results of all executed tasks
   </Card>
   <Card title="Schedules" icon="calendar">
@@ -96,13 +96,13 @@ A Scalt project contains several elements:
   
   <Accordion icon="eye" title="Reader">
     - View agents
-    - See execution history
+    - See tasks history
     - Access metrics
     - Export reports
   </Accordion>
 </AccordionGroup>
 
-## Organize your agents
+## Organize your agents (Enterprise)
 
 ### Use tags and labels
 
@@ -169,7 +169,7 @@ Access your project's key metrics:
   </Card>
 </CardGroup>
 
-### Alerts and notifications (Enterprise)
+### Alerts and notifications
 
 Configure alerts to stay informed:
 
@@ -180,7 +180,7 @@ Configure alerts to stay informed:
   - **Quota reached**: Alert before reaching limits
 </Accordion>
 
-## Project settings
+## Organization settings (Enterprise)
 
 ### General configuration
 
@@ -229,7 +229,7 @@ To create a test environment or deploy to another organization:
     - ✅ Agents and their configuration
     - ✅ Tools and integrations
     - ✅ Knowledge base
-    - ❌ Execution history (not copied)
+    - ❌ Tasks history (not copied)
     - ❌ Members (to be re-invited)
   </Step>
 </Steps>
@@ -238,26 +238,27 @@ To create a test environment or deploy to another organization:
   Credentials and tokens are never copied for security reasons. You will need to reconfigure them in the new project.
 </Warning>
 
-## Archive or delete a project
+## Delete a project
 
-### Archive a project
+To delete a project:
 
-Archiving allows you to keep data while deactivating the project:
-
-- Agents no longer execute
-- Schedules are suspended
-- Data remains accessible in read-only mode
-- No cost incurred for an archived project
-
-### Delete a project
+<Steps>
+  <Step title="Select the project">
+    Access the project you want to delete
+  </Step>
+  <Step title="Delete">
+    Click in the 3 dots menu and select **"Delete project"**
+  </Step>
+</Steps>
 
 <Warning>
   **Irreversible action**: Deleting a project results in permanent loss of:
   - All agents
-  - Execution history
+  - Tasks history
   - Logs and metrics
   - Knowledge base
   
+  To prevent a wrongful deletion, we ask you to delete agents and tools before deleting your project.
   Remember to export your important data before deleting!
 </Warning>
 

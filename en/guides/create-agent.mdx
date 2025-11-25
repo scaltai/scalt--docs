@@ -28,7 +28,7 @@ Scalt Assistant uses artificial intelligence to:
     Select the project where you want to create the agent
   </Step>
   <Step title="Launch the Assistant">
-    Click **"Create an agent"** then select **"Scalt Assistant"**
+   Select **"Scalt Assistant"**
   </Step>
   <Step title="Start the conversation">
     The Assistant interface opens, ready to receive your instructions
@@ -144,10 +144,6 @@ Once created, immediately test your agent:
   </Step>
 </Steps>
 
-<Tip>
-  The Playground uses an isolated environment. Actions are not actually executed (emails not sent, data not modified).
-</Tip>
-
 ## Popular use cases
 
 Get inspired by these examples:
@@ -155,18 +151,32 @@ Get inspired by these examples:
 <AccordionGroup>
   <Accordion icon="envelope" title="Automated email">
     "Create an agent that sends a personalized welcome email to each new customer with advice based on their profile"
+    Tools :
+    - <Icon icon="envelope" iconType="duotone"/> Send email (BREVO)
+    - <Icon icon="users" iconType="duotone"/> Get customer profile (CRM)
   </Accordion>
   
   <Accordion icon="magnifying-glass" title="Competitive intelligence">
     "Create an agent that monitors competitors' prices on their website every day and alerts me if they lower their prices"
+    Tools :
+    - <Icon icon="globe" iconType="duotone"/> Web scraping (Firecrawl)
+    - <Icon icon="envelope" iconType="duotone"/> Send message (Slack)
   </Accordion>
   
   <Accordion icon="user-plus" title="Customer onboarding">
-    "Create an agent that automates onboarding: creates accounts, sends access credentials, schedules a demo and adds to CRM"
+    "Create an agent that automates onboarding: creates accounts, sends access credentials, schedules a dem"
+    Tools :
+    - <Icon icon="users" iconType="duotone"/> Create account (Auth0, Google, Slack)
+    - <Icon icon="envelope" iconType="duotone"/> Send message (Slack)
+    - <Icon icon="calendar" iconType="duotone"/> Schedule demo (Meet, calendar)
   </Accordion>
   
   <Accordion icon="file-invoice-dollar" title="Automatic billing">
     "Create an agent that generates and sends invoices on the 1st of the month, follows up on unpaid ones after 15 days, and updates accounting"
+    Tools :
+    - <Icon icon="file-invoice-dollar" iconType="duotone"/> Get invoice (Zoho)
+    - <Icon icon="envelope" iconType="duotone"/> Send message (Outlook)
+    - <Icon icon="calendar" iconType="duotone"/> Schedule follow-up (Calendar)
   </Accordion>
 </AccordionGroup>
 

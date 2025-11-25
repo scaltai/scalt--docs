@@ -21,33 +21,32 @@ Once your agent is configured and tested, you can execute it in two ways:
 
 ### Launch a task manually
 
-In tasks pages, invoke your agents
-
+In tasks pages, invoke your agents using "@" symbol to select the agent you want to execute.
 
 
 How to test your Agent
 
 <Steps>
   <Step title="Select your agent">
-    In your project, click on the agent to execute
+    In tasks page, select the agent you want to execute @agent_name
   </Step>
   <Step title="Provide parameters">
     If agent requires input data, fill out the form
   </Step>
   <Step title="Launch execution">
-    Confirm to start the task
+    Click on "Run" to start the task
   </Step>
 </Steps>
 
-## Agent Orchestration (Magentic)
+## Agent Orchestration
 
 ### What is agent orchestration?
 
 **Agent orchestration** allows you to create **agent teams** that collaborate to accomplish complex tasks. Each agent has its specialized role, and together they form an intelligent and coordinated system.
 
 <Info>
-  **Powered by Magentic**: We use the Magentic framework for multi-agent orchestration, enabling intelligent and autonomous coordination.
-</Info>
+  **@analyst** read this document and give a short summary **@planner** use the summary to plan the next steps   
+<Info>
 
 ### Why orchestration?
 
@@ -286,55 +285,10 @@ All executions are recorded and accessible:
   </Tab>
 </Tabs>
 
-## Notifications
+## Notifications (coming soon)
 
 Stay informed about your agent executions.
 
-### Configure notifications
-
-<Tabs>
-  <Tab title="Email">
-    ```yaml
-    notifications:
-      email:
-        enabled: true
-        recipients: ["admin@company.com", "team@company.com"]
-        events:
-          - on_failure
-          - on_success_if_critical
-        include_logs: true
-        include_results: true
-    ```
-  </Tab>
-  
-  <Tab title="Slack">
-    ```yaml
-    notifications:
-      slack:
-        enabled: true
-        webhook_url: "${secrets.SLACK_WEBHOOK}"
-        channel: "#notifications"
-        events:
-          - on_start
-          - on_success
-          - on_failure
-        mentions:
-          on_failure: ["@admin", "@devops"]
-    ```
-  </Tab>
-  
-  <Tab title="Microsoft Teams">
-    ```yaml
-    notifications:
-      teams:
-        enabled: true
-        webhook_url: "${secrets.TEAMS_WEBHOOK}"
-        events:
-          - on_failure
-        adaptive_card: true
-    ```
-  </Tab>
-</Tabs>
 
 ## Best practices
 

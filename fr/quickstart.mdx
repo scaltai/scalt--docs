@@ -23,7 +23,7 @@ Les projets vous permettent d'organiser vos agents et automatisations par domain
     Cliquez sur **"Nouveau projet"** et donnez-lui un nom descriptif (par exemple : "Marketing Automation" ou "Support Client")
   </Step>
   <Step title="Configurez les paramètres">
-    Définissez les paramètres de base : nom, description, et invitez les membres de votre équipe si nécessaire
+    Définissez les paramètres de base : nom, description, et tags
   </Step>
 </Steps>
 
@@ -37,7 +37,7 @@ L'Assistant Scalt vous permet de créer des agents simplement en décrivant ce q
 
 <Steps>
   <Step title="Ouvrez l'Assistant Scalt">
-    Dans votre projet, cliquez sur **"Créer un agent"** puis sélectionnez **"Assistant Scalt"**
+    Dans votre projet, cliquez sur l'onglet **"Assistant"** dans la barre latérale gauche
   </Step>
   <Step title="Décrivez votre besoin">
     Exprimez simplement ce que vous voulez automatiser, par exemple :
@@ -50,8 +50,9 @@ L'Assistant Scalt vous permet de créer des agents simplement en décrivant ce q
   <Step title="L'Assistant génère votre agent">
     L'Assistant Scalt analyse votre demande et génère automatiquement :
     - La configuration de l'agent
-    - Les outils nécessaires
-    - Le workflow d'exécution
+    - Vous demande d'ajouter les outils nécessaires
+    - Vous demande d'ajouter les documents nécessaires
+    - Vous demande d'ajouter les instructions nécessaires
   </Step>
 </Steps>
 
@@ -78,23 +79,20 @@ Une fois votre agent créé, personnalisez-le selon vos besoins.
 <AccordionGroup>
   <Accordion icon="plug" title="Connectez vos outils">
     Ajoutez les intégrations nécessaires :
-    - **Outils MCP** : Connectez vos applications préférées
-    - **APIs** : Intégrez vos APIs personnalisées
-    - **Documents** : Uploadez des fichiers de connaissance pour votre agent
+    - **Outils** : Connectez vos applications préférées
+    - **APIs** : Intégrez vos APIs personnalisées en ajoutant un connecteur MCP
   </Accordion>
   
   <Accordion icon="sliders" title="Ajustez les paramètres">
     Personnalisez le comportement de votre agent :
     - **Modèle IA** : Choisissez entre GPT-4, Claude, Mistral...
     - **Température** : Ajustez la créativité des réponses
-    - **Timeout** : Définissez la durée maximale d'exécution
   </Accordion>
   
   <Accordion icon="book" title="Enrichissez la base de connaissances">
     Donnez du contexte à votre agent :
-    - Uploadez des documents PDF, Word, Excel
-    - Ajoutez des liens vers votre documentation
-    - Définissez des instructions spécifiques
+    - **Instructions** : Définissez des instructions spécifiques pour votre agent
+    - **Documents** : Uploadez des fichiers de connaissance pour votre agent (PDF, Word, Excel)
   </Accordion>
 </AccordionGroup>
 
@@ -103,14 +101,11 @@ Une fois votre agent créé, personnalisez-le selon vos besoins.
 Avant de déployer, testez votre agent dans un environnement sécurisé.
 
 <Steps>
-  <Step title="Ouvrez le Playground">
-    Cliquez sur **"Tester"** pour accéder au Playground
-  </Step>
   <Step title="Simulez des scénarios">
     Testez différents cas d'usage pour vérifier le comportement de votre agent
   </Step>
   <Step title="Analysez les résultats">
-    Examinez les logs, les appels d'outils et les réponses générées
+    Examinez les appels d'outils et les réponses générées
   </Step>
   <Step title="Itérez si nécessaire">
     Ajustez la configuration jusqu'à obtenir le comportement souhaité
@@ -135,17 +130,14 @@ Une fois satisfait des tests, déployez votre agent.
     4. Consultez les résultats une fois terminé
   </Tab>
   
-  <Tab title="Planification">
+  <Tab title="Exécution planifiée">
     Pour planifier une exécution récurrente :
     
     1. Cliquez sur **"Planifier"**
-    2. Choisissez la fréquence (quotidien, hebdomadaire, mensuel, ou cron personnalisé)
-    3. Définissez l'heure d'exécution
-    4. Activez la planification
-    
-    <Tip>
-      Utilisez la syntaxe cron pour des planifications complexes (ex: `0 9 * * 1-5` pour tous les jours ouvrés à 9h)
-    </Tip>
+    2. Définissez un nom de tâche et des instructions
+    3. Choisissez la fréquence (quotidien, hebdomadaire, mensuel)
+    4. Définissez l'heure de début
+    5. Activez la planification
   </Tab>
 </Tabs>
 
