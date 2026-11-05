@@ -28,6 +28,7 @@
                 "pages": [
                   "en/guides/projects",
                   "en/guides/create-agent",
+                  "en/guides/docs",
                   "en/guides/edit-agent",
                   "en/guides/run-tasks",
                   "en/guides/scalt-assistant",
@@ -74,6 +75,7 @@
                 "pages": [
                   "fr/guides/projects",
                   "fr/guides/create-agent",
+                  "fr/guides/docs",
                   "fr/guides/edit-agent",
                   "fr/guides/run-tasks",
                   "fr/guides/scalt-assistant",
