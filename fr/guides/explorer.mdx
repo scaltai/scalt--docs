@@ -1,0 +1,119 @@
+---
+title: "Explorateur"
+description: "Voyez ce que savent vos agents : sources, documents, aperçus et citations"
+icon: "magnifying-glass"
+---
+
+## Introduction
+
+L'Explorateur vous montre ce que contient votre connaissance : quelles sources sont connectées, quels documents chacune contient, et si ces documents sont prêts à être retrouvés par vos agents. Vous pouvez ouvrir un document, lire le fichier original et vérifier d'où vient une réponse.
+
+<Info>
+  L'Explorateur est disponible si l'explorateur est activé pour votre espace.
+</Info>
+
+## Où le trouver
+
+Ouvrez **Knowledge hub** dans le menu de gauche. Il liste vos sources. Cliquez sur une source pour ouvrir sa page.
+
+<Note>
+  L'interface de Scalt est aujourd'hui en anglais. Les libellés ci-dessous sont donnés en anglais, tels que vous les voyez à l'écran.
+</Note>
+
+## Le hub des sources
+
+Le hub range vos sources selon ce qu'elles contiennent, par exemple **Business context** (contexte métier) et **Application knowledge** (connaissance d'application). Pour chaque source, vous voyez son nom, son type, son accès, sa fraîcheur, sa taille, son statut et sa dernière mise à jour. **Search knowledge…** filtre la liste.
+
+En haut, un résumé **Source health** (santé des sources) compte vos documents, les exécutions partielles, les sources en retard, les documents en échec et les documents sans extraits. Il liste aussi les sources à revoir. Cliquez sur l'une d'elles pour ouvrir sa page sur le bon onglet.
+
+Le statut d'une source est **Ready** (prête), **Indexing** (en cours d'indexation), **Error** (en erreur), **Cancelled** (annulée), **Unknown** (inconnu) ou **Never run** (jamais lancée).
+
+## La page d'une source
+
+La page d'une source a cinq onglets : **Overview** (vue d'ensemble), **Documents** (ou **Data**, données), **Activity** (activité), **Retrieval** (recherche) et **Settings** (réglages).
+
+- **Connection health** (santé de la connexion) donne le taux de réussite, la dernière synchronisation, la latence moyenne et les erreurs des 7 derniers jours.
+- **Activity** liste les exécutions de la source, avec leur statut, leur début, leur fin et leur durée. Ouvrez une exécution pour voir son erreur.
+- **Documents** contient l'entonnoir et la liste des documents.
+
+### L'entonnoir des documents
+
+L'entonnoir montre jusqu'où vont vos documents :
+
+1. **Listed** (listés) : tous les documents que la source connaît.
+2. **Ready** (prêts) : les documents qui ont été traités.
+3. **Searchable** (consultables) : les documents prêts que vos agents peuvent vraiment retrouver.
+
+Entre deux étapes, vous voyez ce qui est perdu, par exemple les documents **Failed** (en échec), **Skipped** (ignorés) ou **Queued** (en attente), ou les documents **without chunks** (sans extraits). Cliquez sur un chiffre pour filtrer la liste dessus.
+
+## La liste des documents
+
+Cherchez par nom avec **Search documents…**, et filtrez par **Status** (statut). Pour les sources qui mélangent plusieurs sortes de fichiers, vous pouvez aussi filtrer par **Family** (famille) : **Upload** (fichier déposé), **Drive file** (fichier Drive), **Page**, **Article** ou **Web page** (page web).
+
+| Statut | Sens |
+|---|---|
+| **Queued** | En attente de traitement |
+| **Processing** | En cours de traitement |
+| **Ready** | Traité et consultable |
+| **Failed** | N'a pas pu être traité |
+| **Skipped** | Non lu |
+| **Stale** | Remplacé par une version plus récente |
+
+La liste se met à jour toute seule pendant que des documents sont traités.
+
+## Ouvrir un document
+
+Cliquez sur un document pour ouvrir son tiroir. Il a trois onglets :
+
+- **Details** : famille, statut, dernière mise à jour et date de dernière indexation.
+- **Preview** (aperçu) : le fichier original.
+- **Extracted text** (texte extrait) : le texte que Scalt a trouvé dans le fichier, découpé en passages. Les passages écrits par une IA sont marqués **AI-generated**.
+
+Depuis le tiroir, vous pouvez télécharger le fichier, ou l'ouvrir là où il se trouve (**Open in Google Drive** ou **Open page**).
+
+### Le fichier original
+
+L'onglet **Preview** montre l'original :
+
+- **PDF** et **images** : affichés tels quels. Un PDF trop lourd pour l'aperçu reste téléchargeable.
+- **Fichiers Office** (Word, PowerPoint et formats proches) : convertis en PDF la première fois que vous les ouvrez. Vous voyez **Preparing the preview…**, puis le fichier. La mise en page est recalculée : les pages peuvent différer de l'original. Téléchargez le fichier pour la mise en page exacte.
+- Autres types : pas d'aperçu, mais le fichier reste téléchargeable.
+
+## Les citations
+
+Quand une réponse cite l'un de vos documents, cliquez sur la citation. La source s'ouvre dans un tiroir latéral, à la page citée quand le fichier a des pages. Vous voyez l'extrait cité (**Cited extract**), et une note si le document a changé depuis la réponse.
+
+Cela marche aussi pour un fichier joint à une conversation ou à un dossier.
+
+Vous pouvez ouvrir l'original d'un document cité même si vous ne pouvez pas parcourir sa source. Le texte extrait du document reste réservé aux personnes qui peuvent parcourir la source.
+
+## La recherche ⌘K
+
+Appuyez sur **⌘K** (**Ctrl+K** sous Windows) n'importe où dans Scalt. La recherche couvre les **Pages**, les **Docs**, les **Cases** (dossiers), les **Sources**, les **Documents** et les **Passages** de votre espace. Tapez au moins deux caractères. Un passage ouvre son document au bon endroit.
+
+## Qui voit quoi
+
+- Un **admin du space** voit les sources partagées avec le space, et ses propres sources.
+- **Les autres personnes** ne voient que les sources qu'elles ont créées.
+- Les sources privées d'une autre personne ne sont jamais montrées, pas même aux admins.
+- Si vous ne pouvez pas parcourir une source, vous voyez **Documents are restricted** (les documents sont restreints).
+
+## Arrêter une exécution
+
+Sur la page d'une source, un admin du space ou le propriétaire de la source peut cliquer sur **Stop run**. Toutes les exécutions en cours s'arrêtent : synchronisations, exécutions planifiées, ré-indexations et dépôts de fichiers.
+
+- Une ré-indexation arrêtée en route laisse un index partiel. Relancez la ré-indexation de la source.
+- Un dépôt arrêté laisse son document à traiter de nouveau.
+
+## Supprimer un document
+
+Ouvrez le document et cliquez sur **Delete…**. Vous pouvez supprimer les fichiers déposés, les fichiers Drive, les pages, les articles et les pages web, si vous avez le droit de modifier la source.
+
+Un document supprimé disparaît de la recherche et de la liste. La copie que Scalt en avait gardée est aussi effacée, sauf pour une page web, dont la copie archivée est gardée pour l'instant. Un document synchronisé depuis un autre outil ne revient que s'il change à l'origine.
+
+## Limites connues
+
+- Un document n'est consultable qu'une fois **Ready**. Un document **Ready** sans extraits ne peut pas être retrouvé : regardez l'entonnoir.
+- Les aperçus Office sont des pages recalculées : elles peuvent différer de l'original. Téléchargez le fichier pour en être sûr.
+- Après une suppression, laissez un court instant pour que l'effacement se termine partout.
+- L'Explorateur liste les documents stockés dans le space où vous êtes. Les documents stockés dans un autre space n'apparaissent pas.
