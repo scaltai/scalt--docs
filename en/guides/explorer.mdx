@@ -1,0 +1,111 @@
+---
+title: "Explorer"
+description: "See what your agents know: sources, documents, previews and citations"
+icon: "magnifying-glass"
+---
+
+## Introduction
+
+The Explorer shows you what is inside your knowledge: which sources are connected, which documents each one holds, and whether those documents are ready to be found by your agents. You can open a document, read the original file, and check where an answer came from.
+
+## Where to find it
+
+Open **Knowledge hub** in the **Build** section of the left menu. It is shown to admins and builders. It lists the sources of the space. Click a source to open its page.
+
+## The sources hub
+
+Tabs sort the sources: **Business context**, **Application knowledge**, and **Shared with this space** for sources that another space shares with yours. For each source you see its name, type, access, freshness, size, whether it is active, status, connection and last update. Use **Search knowledge…** to filter the list.
+
+At the top, a **Source health** summary counts documents, partial runs, overdue sources, failed documents and documents without chunks. It also lists the sources to review. Click one to open its page on the right tab.
+
+A source status is one of **Ready**, **Indexing**, **Error**, **Cancelled**, **Unknown** or **Never run**.
+
+## A source page
+
+A source page has five tabs: **Overview**, **Documents** (or **Data**), **Activity**, **Retrieval** and **Settings**. A source shared by another space opens in read-only view, without these tabs.
+
+- **Connection health** shows the success rate, the last sync, the average latency and the errors of the last 7 days.
+- **Activity** lists the runs of the source with their status and time. Open a run to see its start, end, duration and error, and to retry a failed or cancelled run.
+- **Documents** holds the funnel and the list of documents.
+
+### The document funnel
+
+The funnel shows how far your documents get:
+
+1. **Listed**: every document the source knows.
+2. **Ready**: documents that were processed.
+3. **Searchable**: ready documents that your agents can actually find.
+
+Between two steps, you see what was lost, for example documents that are **Failed**, **Skipped** or **Queued**, or documents **without chunks**. Click a step or a loss to filter the list on it. **Searchable** and **without chunks** are not filters.
+
+## The list of documents
+
+Search by name with **Search documents…**, and filter by **Status**. On an upload or Drive source, you can also filter by **Family**: **Upload** or **Drive file**.
+
+| Status | Meaning |
+|---|---|
+| **Queued** | Waiting to be processed |
+| **Processing** | Being processed now |
+| **Ready** | Processed (searchable once it has chunks) |
+| **Failed** | Could not be processed |
+| **Skipped** | Not read |
+| **Stale** | Its index was cleared; the next run of the source indexes it again |
+
+The list updates by itself while documents are being processed.
+
+## Open a document
+
+Click a document to open its drawer. It has three tabs:
+
+- **Details**: type, family, status, last update and last indexed date.
+- **Preview**: the original file.
+- **Extracted text**: the text that Scalt found in the file, split into passages. What AI added, the context of a passage and the questions about the document, is marked **AI-generated**.
+
+From the drawer you can download the file, or open it where it comes from (**Open in Google Drive** or **Open page**).
+
+### The original file
+
+The **Preview** tab shows the original:
+
+- **PDF** and **images**: shown as they are. A PDF that is too large to preview can be downloaded.
+- **Office files** (Word and PowerPoint, and similar formats): they can be converted to a PDF for preview. When a preview is available, you see **Preparing the preview…** the first time you open the file, then the file. The layout is recalculated, so pages may differ from the original: download the file for the exact layout. When no preview is available (**Preview isn't available for this file type.**), download the file to read it.
+- Other types: no preview, but you can still download the file.
+
+## Citations
+
+When citations are shown in an answer, click a citation to open its source in a side drawer. For a PDF it opens on the cited page, and for a presentation on the cited slide. You see the **Cited passage**, or the **Cited extract** kept with the answer if you cannot browse the source. A note tells you if **the document changed since the answer**.
+
+This also works for a file attached to a conversation or a case.
+
+You can open the original of a cited document even if you cannot browse its source. The extracted text of the document stays reserved to people who can browse the source.
+
+## Search with ⌘K
+
+Press **⌘K** (**Ctrl+K** on Windows) anywhere in Scalt. The search covers **Pages**, **Docs**, **Cases**, **Sources**, **Documents** and **Passages** of all your spaces, your private space included. Type at least two characters. A passage opens its document at the right place.
+
+## Who sees what
+
+- Everyone who opens the Knowledge hub sees the sources of the space.
+- Only an admin of the space and the person who created a source can browse its documents. The **Source health** counts follow the same rule.
+- Another person's private sources are never shown, not even to admins.
+- If you cannot browse a source, you see **Documents are restricted**.
+
+## Stop a run
+
+When a run is in progress, the owner of the source or an admin of its space can click **Stop run** on the source page. For an organization-wide source, only an organization admin can. Every run in progress stops: syncs, scheduled runs, re-embeds and uploads.
+
+- A re-embed stopped halfway leaves a partial index. Re-embed the source again.
+- A stopped upload leaves its document to process again.
+
+## Delete a document
+
+Open the document and click **Delete…**. You can delete uploads, Drive files, pages, articles and web pages, if you may edit the source. For an organization-wide source, only an organization admin can.
+
+A deleted document disappears from search and from the list. The copy that Scalt stored of it is erased as well, except for a web page, whose archived copy is kept for now. A document that was synced from another tool comes back only if it changes at its origin.
+
+## Known limits
+
+- A document is searchable only once it is **Ready**. A **Ready** document without chunks cannot be found: check the funnel.
+- When Office previews are available, they are rebuilt pages: they can differ from the original. Download the file to be sure.
+- After a deletion, allow a short moment for the erasure to finish everywhere.
+- The Explorer lists the documents stored in the space you are in. Documents stored in another space do not appear.
