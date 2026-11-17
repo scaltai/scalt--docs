@@ -31,3 +31,5 @@ All API endpoints are authenticated using Bearer tokens and picked up from the s
   }
 ]
 ```
+
+Une clé API est vérifiée dans la base à chaque requête. Dès qu'une clé est révoquée, la requête suivante qui l'utilise est refusée en `401`, avec la même réponse qu'une clé inconnue. Une clé expirée est refusée de la même façon. Quand la vérification des clés API est saturée, une requête reçoit `503 API_KEY_VERIFICATION_BUSY` avec l'en-tête `Retry-After: 1` : elle n'a pas été traitée, renvoyez-la après ce délai.
