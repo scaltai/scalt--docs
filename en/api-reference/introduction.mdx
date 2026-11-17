@@ -32,4 +32,6 @@ All API endpoints are authenticated using Bearer tokens and picked up from the s
 ]
 ```
 
+An API key is checked against the database on every request. Once you revoke a key, the next request that uses it is refused with `401`, with the same answer as an unknown key. An expired key is refused the same way. When the verification of API keys is saturated, a request gets `503 API_KEY_VERIFICATION_BUSY` with a `Retry-After: 1` header: it was not processed, send it again after that delay.
+
 
