@@ -12,87 +12,6 @@ Scalt is constantly evolving to offer you the best AI automation solutions. Here
   **Join the private beta** to be among the first to test these new features. [Sign up here](https://app.scalt.ai).
 </Note>
 
-
-## Agent Orchestration (Magentic)
-
-### What is agent orchestration?
-
-**Agent orchestration** allows you to create **agent teams** that collaborate to accomplish complex tasks. Each agent has its specialized role, and together they form an intelligent and coordinated system.
-
-<Info>
-  **Powered by Magentic**: We use the Magentic framework for multi-agent orchestration, enabling intelligent and autonomous coordination.
-</Info>
-
-
-### Orchestration modes
-
-<Tabs>
-  <Tab title="Sequential">
-    Agents execute one after another (try it in beta).
-    
-    ```yaml
-    orchestration:
-      mode: "sequential"
-      agents:
-        - id: "data-collector"
-          output: "raw_data"
-        
-        - id: "data-analyzer"
-          input: "${raw_data}"
-          output: "insights"
-        
-        - id: "report-generator"
-          input: "${insights}"
-          output: "final_report"
-    ```
-    
-    **Use cases**: Linear processes with strong dependencies
-  </Tab>
-  
-  <Tab title="Parallel">
-    Multiple agents execute simultaneously.
-    
-    ```yaml
-    orchestration:
-      mode: "parallel"
-      agents:
-        - id: "sentiment-analyzer"
-        - id: "keyword-extractor"
-        - id: "entity-recognition"
-      
-      aggregation:
-        agent: "result-merger"
-        strategy: "combine_all"
-    ```
-    
-    **Use cases**: Independent analyses, massive processing
-  </Tab>
-  
-  <Tab title="Autonomous (Magentic)">
-    Agents decide coordination themselves.
-    
-    ```yaml
-    orchestration:
-      mode: "autonomous"
-      goal: "Analyze customer satisfaction and propose improvements"
-      
-      available_agents:
-        - "data-fetcher"
-        - "sentiment-analyzer"
-        - "trend-detector"
-        - "recommendation-engine"
-        - "report-writer"
-      
-      constraints:
-        max_iterations: 10
-        budget: 5.0  # credits
-        timeout: 300  # seconds
-    ```
-    
-    **Use cases**: Open problems, creative exploration
-  </Tab>
-</Tabs>
-
 ## Roadmap and dates
 
 <Steps>
@@ -101,13 +20,6 @@ Scalt is constantly evolving to offer you the best AI automation solutions. Here
     - 50+ ready-to-use agents
     - Rating and review system
     - Community contribution
-  </Step>
-  
-  <Step title="Q2 2026: Magentic orchestration">
-    Autonomous and intelligent orchestration
-    - Self-organizing agents
-    - Collaborative learning
-    - Continuous optimization
   </Step>
   
   <Step title="2026: Factory Pro & Advanced Orchestration">
