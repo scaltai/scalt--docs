@@ -40,13 +40,15 @@ How to test your Agent
 
 ## Agent Orchestration
 
+When a request has several independent parts, an assistant can hand them to sub-agents that work in parallel, then combine their results into a single answer. Each delegation shows in the conversation's activity trail ("Delegated to …"). If Scalt's safety checks stop a sub-agent, the whole answer stops.
+
 ### What is agent orchestration?
 
 **Agent orchestration** allows you to create **agent teams** that collaborate to accomplish complex tasks. Each agent has its specialized role, and together they form an intelligent and coordinated system.
 
 <Info>
   **@analyst** read this document and give a short summary **@planner** use the summary to plan the next steps   
-<Info>
+</Info>
 
 ### Why orchestration?
 
