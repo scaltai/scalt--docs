@@ -34,7 +34,8 @@
                   "en/guides/run-tasks",
                   "en/guides/scalt-assistant",
                   "en/guides/scalters-factory",
-                  "en/guides/monitoring"
+                  "en/guides/monitoring",
+                  "en/guides/usage-by-person"
                 ]
               },
               {
@@ -81,7 +82,8 @@
                   "fr/guides/edit-agent",
                   "fr/guides/run-tasks",
                   "fr/guides/scalt-assistant",
-                  "fr/guides/scalters-factory"
+                  "fr/guides/scalters-factory",
+                  "fr/guides/usage-by-person"
                 ]
               },
               {

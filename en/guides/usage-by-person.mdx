@@ -1,0 +1,49 @@
+---
+title: "Usage by person"
+description: "What organization admins see of each person's token usage, and what you see in My usage"
+icon: "users"
+---
+
+## Introduction
+
+Organization owners and admins can break down the organization's token usage by person. Everyone can see their own usage in **My usage**.
+
+## Informing your employees
+
+This view is available to your organization's owners and admins. Informing your employees, and their representatives where you have them (in France, the CSE), is your organization's responsibility, before admins start using it.
+
+## What admins see
+
+In your organization settings, open **Usage**, then choose **Person** in **Group by**. Person can be the first or the second level (not under an app filter), with space, app, assistant, provider or model.
+
+- Each line shows a person's name, their email below it, and their tokens. The view shows token counts only.
+- A person's usage in their private space and with their personal assistants counts in their line. Under the person, it shows as **Private spaces** and **Private assistants** totals: private spaces and personal assistants are never named.
+- The 20 people who used the most tokens are listed one by one; the others are grouped under **Others**.
+- Usage that isn't tied to a person is under **No person**: "Scheduled runs, API keys, missions, case analysis, background work and people who left."
+- For now, usage from people who left the organization is counted under No person. It will move to Former members in a later release.
+
+Only organization owners and admins have this view, and only when signed in to Scalt. API keys and agents can't read it. Space admins don't have it: a space's usage has no Person.
+
+<Info>
+Each time an admin views usage by person, the organization's audit log records it as **Viewed usage by person**: who viewed it, the period, the grouping and the filters (provider, app), but no figures and no names of the people shown. Open **Audit Log** in your organization settings to see these records.
+</Info>
+
+## My usage
+
+Open your profile menu, choose **Account**, then **Usage**: "Tokens you used, by space, assistant and model." Your usage in private spaces and with personal assistants appears there as totals too. Your total is the same as your line in the admins' view. Opening My usage is not recorded in the audit log.
+
+The page shows this notice:
+
+> Organization admins can see this usage under your name. This view shows them token counts only, by space, app, assistant, provider and model. Your usage in private spaces and with personal assistants appears to them as totals, never by name.
+
+## The last 12 months
+
+Usage by person covers the last 12 months. Usage by person and My usage cover the current month and the 11 calendar months before it. Beyond that, usage is no longer shown by person. A conversation still shows its author for as long as it is kept. A period that starts earlier can't be shown by person; in the organization's **Usage**, the same period without Person can.
+
+## The organization export
+
+Organization admins can export the organization's data; the app has no button for it yet. This export includes the conversations of team spaces, with the person who started each one and the usage figures recorded for each message: through it, admins can read what people wrote in team spaces, with no 12-month limit. It doesn't include private spaces, conversations with a private assistant, nor conversations that used content from a personal connection. Each export request and each download is recorded in the audit log. The CSV export of the **Usage** page doesn't include the person.
+
+## When someone leaves
+
+When someone leaves the organization, their usage in team spaces stays in those spaces' totals, under **No person** for now. Their private space is deleted with its usage, so that usage leaves past totals.
