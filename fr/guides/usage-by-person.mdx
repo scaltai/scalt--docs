@@ -1,0 +1,51 @@
+---
+title: "Usage par personne"
+description: "Ce que les admins de l'organisation voient de l'usage en jetons de chacun, et ce que vous voyez dans My usage"
+icon: "users"
+---
+
+## Introduction
+
+Les owners et admins d'une organisation peuvent répartir sa consommation en jetons par personne. Chacun voit sa propre consommation dans **My usage**.
+
+## Informer vos salariés
+
+Cette vue est ouverte aux owners et admins de votre organisation. L'information de vos salariés, et de leurs représentants là où vous en avez (en France, le CSE), revient à votre organisation, avant que les admins ne s'en servent.
+
+## Ce que voient les admins
+
+Dans les réglages de l'organisation, ouvrez **Usage**, puis choisissez **Person** dans **Group by**. Person peut être le premier ou le second niveau (pas sous un filtre d'App), avec le space, l'App, l'assistant, le fournisseur ou le modèle.
+
+- Chaque ligne montre le nom de la personne, son e-mail en dessous, et ses jetons. La vue ne montre que des nombres de jetons.
+- La consommation d'une personne dans son space privé et avec ses assistants personnels compte dans sa ligne. Sous la personne, elle apparaît en totaux **Private spaces** et **Private assistants** : les spaces privés et les assistants personnels ne sont jamais nommés.
+- Les 20 personnes qui ont consommé le plus sont listées une à une ; les autres sont regroupées sous **Others**.
+- La consommation qui n'est rattachée à aucune personne est sous **No person** : « Scheduled runs, API keys, missions, case analysis, background work and people who left. » (runs planifiés, clés d'API, missions, analyses de case, travail de fond et personnes parties).
+- Pour l'instant, la consommation des personnes qui ont quitté l'organisation est comptée sous No person. Elle passera dans Former members dans une prochaine version.
+
+Seuls les owners et admins de l'organisation ont cette vue, et seulement connectés à Scalt. Les clés d'API et les agents ne peuvent pas la lire. Les admins d'un space ne l'ont pas : l'usage d'un space n'a pas de Person.
+
+<Info>
+Chaque fois qu'un admin consulte l'usage par personne, le journal d'audit de l'organisation l'inscrit comme **Viewed usage by person** : qui l'a consulté, la période, le regroupement et les filtres (fournisseur, App), sans aucun chiffre ni le nom des personnes affichées. Ouvrez **Audit Log** dans les réglages de l'organisation pour voir ces lignes.
+</Info>
+
+## My usage
+
+Ouvrez le menu de votre profil, choisissez **Account**, puis **Usage** : les jetons que vous avez utilisés, par space, assistant et modèle. Votre consommation dans les spaces privés et avec les assistants personnels y apparaît aussi en totaux. Votre total est le même que votre ligne dans la vue des admins. Ouvrir My usage n'est pas inscrit au journal d'audit.
+
+La page affiche cette mention, en anglais :
+
+> Organization admins can see this usage under your name. This view shows them token counts only, by space, app, assistant, provider and model. Your usage in private spaces and with personal assistants appears to them as totals, never by name.
+>
+> *Traduction : Les admins de l'organisation peuvent voir cet usage sous votre nom. Cette vue ne leur montre que des nombres de jetons, par space, App, assistant, fournisseur et modèle. Votre usage dans les spaces privés et avec les assistants personnels leur apparaît en totaux, jamais par nom.*
+
+## Les 12 derniers mois
+
+« Usage by person covers the last 12 months. » (l'usage par personne couvre les 12 derniers mois). L'usage par personne et **My usage** couvrent le mois en cours et les 11 mois civils d'avant. Au-delà, l'usage ne s'affiche plus par personne. Une conversation montre toujours son auteur tant qu'elle est conservée. Une période qui commence plus tôt ne s'affiche pas par personne ; dans **Usage** de l'organisation, la même période sans Person s'affiche.
+
+## L'export de l'organisation
+
+Les admins de l'organisation peuvent exporter ses données ; l'app n'a pas encore de bouton pour cela. Cet export contient les conversations des spaces d'équipe, avec la personne qui a lancé chacune et les chiffres d'usage enregistrés pour chaque message : les admins peuvent ainsi lire ce que chacun a écrit dans les spaces d'équipe, sans limite de 12 mois. Il ne contient ni les spaces privés, ni les conversations avec un assistant privé, ni celles qui ont utilisé le contenu d'une connexion personnelle. Chaque demande d'export et chaque téléchargement sont inscrits au journal d'audit. L'export CSV de la page **Usage** ne contient pas la personne.
+
+## Quand quelqu'un part
+
+Quand une personne quitte l'organisation, sa consommation dans les spaces d'équipe reste dans leurs totaux, sous **No person** pour l'instant. Son space privé est supprimé avec sa consommation, qui sort donc des totaux passés.
